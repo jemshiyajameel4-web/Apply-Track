@@ -82,50 +82,50 @@ export default function DashboardPage() {
       showAddButton={false}
     >
       <div className="space-y-7 w-full max-w-full">
-        {/* Editorial Hero Banner Section (Section 6.C) */}
-        <div className="relative overflow-hidden rounded-3xl border border-[#E7DEDF] bg-white p-6 sm:p-8 lg:p-10 shadow-sm">
+        {/* Editorial Hero Banner Section (Compact Small Size) */}
+        <div className="relative overflow-hidden rounded-2xl border border-[#E7DEDF] bg-white p-4 sm:p-5 lg:p-6 shadow-xs">
           {/* Subtle Organic Blush Background Shapes */}
-          <div className="pointer-events-none absolute -top-12 -right-12 w-80 h-80 rounded-full bg-[#FAF6F8] blur-3xl opacity-80" />
-          <div className="pointer-events-none absolute -bottom-16 left-1/3 w-64 h-64 rounded-full bg-[#E6F3F2] blur-3xl opacity-60" />
+          <div className="pointer-events-none absolute -top-10 -right-10 w-60 h-60 rounded-full bg-[#FAF6F8] blur-2xl opacity-70" />
+          <div className="pointer-events-none absolute -bottom-12 left-1/3 w-48 h-48 rounded-full bg-[#E6F3F2] blur-2xl opacity-50" />
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
             {/* Left Content */}
-            <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FAF6F8] border border-[#DCC5D1] text-[#925775] text-xs font-bold tracking-wider uppercase">
-                <Sparkles className="w-3.5 h-3.5 text-[#E47F9C]" />
+            <div className="lg:col-span-8 space-y-2.5">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#FAF6F8] border border-[#DCC5D1] text-[#925775] text-[10px] font-bold tracking-wider uppercase">
+                <Sparkles className="w-3 h-3 text-[#E47F9C]" />
                 <span>YOUR CAREER JOURNEY</span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-[#19332F] leading-tight font-serif-display">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#19332F] leading-snug font-serif">
                 Your next opportunity{" "}
-                <span className="text-[#006764] italic underline decoration-[#E47F9C] decoration-wavy decoration-2">
+                <span className="text-[#006764] italic underline decoration-[#E47F9C] decoration-wavy decoration-1">
                   starts here
                 </span>
                 .
               </h2>
 
-              <p className="text-xs sm:text-sm text-[#687873] max-w-xl leading-relaxed font-normal">
-                A clearer view of every application, every interview, and every step forward. Track your progress with confidence and momentum.
+              <p className="text-xs text-[#687873] max-w-lg leading-relaxed font-normal">
+                A clearer view of every application, every interview, and every step forward. Track your progress with confidence.
               </p>
 
-              <div className="pt-2 flex flex-wrap items-center gap-3">
+              <div className="pt-1 flex flex-wrap items-center gap-2.5">
                 <Link href="/applications/new">
                   <Button
                     variant="primary"
-                    size="md"
-                    leftIcon={<Plus className="w-4 h-4" />}
-                    className="shadow-sm hover:shadow-md font-semibold text-xs sm:text-sm"
+                    size="sm"
+                    leftIcon={<Plus className="w-3.5 h-3.5" />}
+                    className="shadow-xs font-semibold text-xs bg-[#006764] hover:bg-[#005250] text-white"
                   >
-                    + Add application
+                    Add application
                   </Button>
                 </Link>
 
                 <Link href="/applications">
                   <Button
                     variant="outline"
-                    size="md"
-                    rightIcon={<ArrowRight className="w-4 h-4" />}
-                    className="font-semibold text-xs sm:text-sm bg-white"
+                    size="sm"
+                    rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
+                    className="font-semibold text-xs bg-white border-[#E7DEDF] text-[#19332F] hover:bg-[#FAF7F5]"
                   >
                     View applications
                   </Button>
@@ -134,8 +134,8 @@ export default function DashboardPage() {
             </div>
 
             {/* Right Illustration */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <CareerHeroIllustration className="w-full max-w-[320px] sm:max-w-[340px] h-auto" />
+            <div className="lg:col-span-4 flex justify-center lg:justify-end">
+              <CareerHeroIllustration className="w-full max-w-[160px] sm:max-w-[185px] lg:max-w-[200px] h-auto" />
             </div>
           </div>
         </div>
