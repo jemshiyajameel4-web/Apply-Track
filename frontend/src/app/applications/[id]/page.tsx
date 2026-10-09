@@ -95,7 +95,7 @@ export default function ApplicationDetailPage() {
         <div>
           <Link
             href="/applications"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#6B7280] hover:text-[#111827] transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#687873] hover:text-[#006764] transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Back to all applications</span>
@@ -103,35 +103,35 @@ export default function ApplicationDetailPage() {
         </div>
 
         {/* Top Header Card (Section 29) */}
-        <div className="rounded-xl border border-[#E5E7EB] bg-white p-4 sm:p-6 shadow-xs w-full min-w-0">
+        <div className="rounded-2xl border border-[#E7DEDF] bg-white p-4 sm:p-6 shadow-sm w-full min-w-0">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 w-full min-w-0">
             <div className="flex items-start gap-3 sm:gap-4 min-w-0">
-              <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-[#E7F3F3] text-[#0E6162] font-bold text-sm sm:text-base flex-shrink-0 border border-[#CCE7E8]">
+              <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-[#E6F3F2] text-[#006764] font-bold text-sm sm:text-base flex-shrink-0 border border-[#B2DCDA]">
                 {application.company_name.slice(0, 2).toUpperCase()}
               </div>
               <div className="min-w-0">
                 <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
-                  <h2 className="text-lg sm:text-2xl font-bold text-[#111827] break-words">
+                  <h2 className="text-lg sm:text-2xl font-bold font-serif text-[#19332F] break-words">
                     {application.company_name}
                   </h2>
                   <ApplicationStatusBadge status={application.status} size="sm" />
                 </div>
-                <p className="text-xs sm:text-sm font-medium text-[#5A646E] mt-0.5 sm:mt-1 break-words">
+                <p className="text-xs sm:text-sm font-medium text-[#687873] mt-0.5 sm:mt-1 break-words">
                   {application.position}
                 </p>
               </div>
             </div>
 
             {/* Header Action Buttons */}
-            <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap pt-2 sm:pt-0 border-t sm:border-t-0 border-gray-100">
+            <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap pt-2 sm:pt-0 border-t sm:border-t-0 border-[#E7DEDF]/50">
               {application.job_url && (
                 <a
                   href={application.job_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E2E8E5] text-xs font-semibold text-[#111827] hover:bg-[#F8FAF9] transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#E7DEDF] text-xs font-semibold text-[#19332F] hover:bg-[#FAF7F5] transition-colors"
                 >
-                  <ExternalLink className="w-3.5 h-3.5 text-[#0E6162]" />
+                  <ExternalLink className="w-3.5 h-3.5 text-[#006764]" />
                   <span>Job Link</span>
                 </a>
               )}
@@ -141,6 +141,7 @@ export default function ApplicationDetailPage() {
                   variant="outline"
                   size="sm"
                   leftIcon={<Edit className="w-3.5 h-3.5" />}
+                  className="border-[#E7DEDF] text-[#19332F] hover:bg-[#FAF7F5]"
                 >
                   Edit
                 </Button>
@@ -151,6 +152,7 @@ export default function ApplicationDetailPage() {
                 size="sm"
                 onClick={() => setShowDeleteModal(true)}
                 leftIcon={<Trash2 className="w-3.5 h-3.5" />}
+                className="bg-[#FDF1F4] border border-[#F7C9D6] text-[#C96582] hover:bg-[#fce5eb]"
               >
                 Delete
               </Button>
@@ -163,38 +165,38 @@ export default function ApplicationDetailPage() {
           {/* Left 2 Cols: Details & Notes */}
           <div className="lg:col-span-2 space-y-5 w-full min-w-0">
             {/* Overview Details */}
-            <Card className="w-full min-w-0">
+            <Card className="w-full min-w-0 border-[#E7DEDF] rounded-2xl shadow-sm">
               <CardHeader>
                 <div className="flex items-center gap-2">
-                  <Briefcase className="w-4 h-4 text-[#0E6162]" />
-                  <CardTitle>Role Information</CardTitle>
+                  <Briefcase className="w-4 h-4 text-[#006764]" />
+                  <CardTitle className="text-base font-bold text-[#19332F]">Role Information</CardTitle>
                 </div>
               </CardHeader>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-xs">
-                <div className="p-3 rounded-lg bg-[#F8FAF9] border border-gray-100">
-                  <span className="text-[#8E98A2] block mb-1 font-medium">
+                <div className="p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E7DEDF]">
+                  <span className="text-[#687873] block mb-1 font-medium text-[11px]">
                     Applied Date
                   </span>
-                  <span className="text-xs sm:text-sm font-semibold text-[#111827]">
+                  <span className="text-xs sm:text-sm font-bold text-[#19332F]">
                     {formatDate(application.application_date)}
                   </span>
                 </div>
 
-                <div className="p-3 rounded-lg bg-[#F8FAF9] border border-gray-100">
-                  <span className="text-[#8E98A2] block mb-1 font-medium">
+                <div className="p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E7DEDF]">
+                  <span className="text-[#687873] block mb-1 font-medium text-[11px]">
                     Location
                   </span>
-                  <span className="text-xs sm:text-sm font-semibold text-[#111827] break-words">
+                  <span className="text-xs sm:text-sm font-bold text-[#19332F] break-words">
                     {application.location || "Remote / Unspecified"}
                   </span>
                 </div>
 
-                <div className="p-3 rounded-lg bg-[#F8FAF9] border border-gray-100">
-                  <span className="text-[#8E98A2] block mb-1 font-medium">
+                <div className="p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E7DEDF]">
+                  <span className="text-[#687873] block mb-1 font-medium text-[11px]">
                     Target Compensation
                   </span>
-                  <span className="text-xs sm:text-sm font-semibold text-[#111827]">
+                  <span className="text-xs sm:text-sm font-bold text-[#19332F]">
                     {formatSalary(
                       application.salary,
                       application.currency,
@@ -203,11 +205,11 @@ export default function ApplicationDetailPage() {
                   </span>
                 </div>
 
-                <div className="p-3 rounded-lg bg-[#F8FAF9] border border-gray-100">
-                  <span className="text-[#8E98A2] block mb-1 font-medium">
+                <div className="p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E7DEDF]">
+                  <span className="text-[#687873] block mb-1 font-medium text-[11px]">
                     Last Updated
                   </span>
-                  <span className="text-xs sm:text-sm font-semibold text-[#111827]">
+                  <span className="text-xs sm:text-sm font-bold text-[#19332F]">
                     {formatDate(application.updated_at)}
                   </span>
                 </div>
@@ -219,31 +221,31 @@ export default function ApplicationDetailPage() {
               application.interview_type ||
               application.status === "Interview" ||
               application.status === "Technical Round") && (
-              <Card className="w-full min-w-0">
+              <Card className="w-full min-w-0 border-[#E7DEDF] rounded-2xl shadow-sm">
                 <CardHeader>
                   <div className="flex items-center gap-2">
-                    <Video className="w-4 h-4 text-[#844C6A]" />
-                    <CardTitle>Interview Schedule</CardTitle>
+                    <Video className="w-4 h-4 text-[#925775]" />
+                    <CardTitle className="text-base font-bold text-[#19332F]">Interview Schedule</CardTitle>
                   </div>
                 </CardHeader>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-xs">
-                  <div className="p-3 rounded-lg bg-[#F3E9EE] border border-[#D8C2CE]">
-                    <span className="text-[#844C6A] block mb-1 font-semibold">
+                  <div className="p-3.5 rounded-xl bg-[#F5EEF2] border border-[#DCC5D1]">
+                    <span className="text-[#925775] block mb-1 font-semibold text-[11px]">
                       Scheduled Date
                     </span>
-                    <span className="text-xs sm:text-sm font-semibold text-[#111827]">
+                    <span className="text-xs sm:text-sm font-bold text-[#19332F]">
                       {application.interview_date
                         ? formatDate(application.interview_date)
                         : "To be scheduled"}
                     </span>
                   </div>
 
-                  <div className="p-3 rounded-lg bg-[#F3E9EE] border border-[#D8C2CE]">
-                    <span className="text-[#844C6A] block mb-1 font-semibold">
+                  <div className="p-3.5 rounded-xl bg-[#F5EEF2] border border-[#DCC5D1]">
+                    <span className="text-[#925775] block mb-1 font-semibold text-[11px]">
                       Interview Stage
                     </span>
-                    <span className="text-xs sm:text-sm font-semibold text-[#111827] break-words">
+                    <span className="text-xs sm:text-sm font-bold text-[#19332F] break-words">
                       {application.interview_type || "General Interview"}
                     </span>
                   </div>
@@ -252,20 +254,20 @@ export default function ApplicationDetailPage() {
             )}
 
             {/* Notes Section (Section 27) */}
-            <Card className="w-full min-w-0">
+            <Card className="w-full min-w-0 border-[#E7DEDF] rounded-2xl shadow-sm">
               <CardHeader>
                 <div className="flex items-center gap-2">
-                  <FileText className="w-4 h-4 text-[#0E6162]" />
-                  <CardTitle>Notes & Preparation</CardTitle>
+                  <FileText className="w-4 h-4 text-[#006764]" />
+                  <CardTitle className="text-base font-bold text-[#19332F]">Notes & Preparation</CardTitle>
                 </div>
               </CardHeader>
 
               {application.notes ? (
-                <div className="p-3.5 sm:p-4 rounded-lg bg-[#F8FAF9] border border-gray-100 text-xs sm:text-sm text-[#111827] whitespace-pre-wrap break-words leading-relaxed">
+                <div className="p-4 rounded-xl bg-[#FAF7F5] border border-[#E7DEDF] text-xs sm:text-sm text-[#19332F] whitespace-pre-wrap break-words leading-relaxed">
                   {application.notes}
                 </div>
               ) : (
-                <p className="text-xs text-[#8E98A2] italic">
+                <p className="text-xs text-[#98A5A1] italic">
                   No notes added for this application yet. Click Edit to add interview notes or recruiter contacts.
                 </p>
               )}
@@ -274,11 +276,11 @@ export default function ApplicationDetailPage() {
 
           {/* Right 1 Col: Application Timeline (Section 30) */}
           <div className="w-full min-w-0">
-            <Card className="h-full w-full min-w-0">
+            <Card className="h-full w-full min-w-0 border-[#E7DEDF] rounded-2xl shadow-sm">
               <CardHeader>
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-[#0E6162]" />
-                  <CardTitle>Timeline</CardTitle>
+                  <Clock className="w-4 h-4 text-[#006764]" />
+                  <CardTitle className="text-base font-bold text-[#19332F]">Timeline</CardTitle>
                 </div>
               </CardHeader>
 

@@ -14,7 +14,7 @@ export function Logo({
   className,
   size = "md",
   showText = true,
-  textColor = "text-[#111827]",
+  textColor = "text-[#19332F]",
   linkTo = "/",
 }: LogoProps) {
   const iconDimensions = {
@@ -34,7 +34,7 @@ export function Logo({
       {/* Abstract geometric symbol: Briefcase + Check mark progress */}
       <div
         className={cn(
-          "relative flex items-center justify-center rounded-lg bg-[#0E6162] text-white shadow-sm flex-shrink-0",
+          "relative flex items-center justify-center rounded-lg bg-gradient-to-br from-[#143B34] to-[#006764] text-white shadow-sm flex-shrink-0 border border-[#006764]/40",
           iconDimensions[size]
         )}
       >
@@ -42,22 +42,22 @@ export function Logo({
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth="2.5"
+          strokeWidth="2.3"
           strokeLinecap="round"
           strokeLinejoin="round"
           className="w-[62%] h-[62%]"
         >
           {/* Briefcase frame */}
-          <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-          <rect width="20" height="14" x="2" y="6" rx="2" />
-          {/* Progress checkmark */}
-          <path d="m9 13 2 2 4-4" stroke="#DE7A96" strokeWidth="2.5" />
+          <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" stroke="#FAF7F5" />
+          <rect width="20" height="14" x="2" y="6" rx="2" stroke="#FAF7F5" />
+          {/* Progress checkmark in Rose Pink */}
+          <path d="m9 13 2.2 2.2 4.3-4.5" stroke="#E47F9C" strokeWidth="2.6" />
         </svg>
       </div>
 
       {showText && (
         <span className={cn("font-bold tracking-tight", textDimensions[size], textColor)}>
-          Apply<span className="text-[#0E6162]">Track</span>
+          Apply<span className="text-[#006764]">Track</span>
         </span>
       )}
     </div>

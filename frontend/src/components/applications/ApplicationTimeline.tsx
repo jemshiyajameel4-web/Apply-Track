@@ -15,8 +15,8 @@ export function ApplicationTimeline({
 }: ApplicationTimelineProps) {
   if (!history || history.length === 0) {
     return (
-      <div className="flex items-center gap-2 text-xs text-[#6B7280]">
-        <Clock className="w-4 h-4 text-gray-400" />
+      <div className="flex items-center gap-2 text-xs text-[#687873]">
+        <Clock className="w-4 h-4 text-[#98A5A1]" />
         <span>Application created on {formatDate(createdAt)}</span>
       </div>
     );
@@ -33,33 +33,33 @@ export function ApplicationTimeline({
               <div className="relative pb-8">
                 {!isLast && (
                   <span
-                    className="absolute left-4 top-4 -ml-px h-full w-0.5 bg-gray-200"
+                    className="absolute left-4 top-4 -ml-px h-full w-0.5 bg-[#E7DEDF]"
                     aria-hidden="true"
                   />
                 )}
 
                 <div className="relative flex items-start space-x-3">
-                  <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-[#E7F3F3] text-[#0E6162] ring-8 ring-white border border-[#CCE7E8]">
+                  <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-[#E6F3F2] text-[#006764] ring-8 ring-white border border-[#B2DCDA]">
                     <CircleDot className="h-4 w-4" />
                   </div>
 
                   <div className="min-w-0 flex-1 pt-1">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
                       <div className="flex items-center gap-1.5 flex-wrap">
-                        <span className="font-semibold text-[#111827]">
+                        <span className="font-semibold text-[#19332F]">
                           {event.from_status
                             ? `Status updated to`
                             : `Application created with status`}
                         </span>
                         <ApplicationStatusBadge status={event.to_status} size="sm" />
                       </div>
-                      <time className="text-gray-400 text-[11px] sm:text-xs">
+                      <time className="text-[#98A5A1] text-[11px] sm:text-xs">
                         {formatDate(event.changed_at)}
                       </time>
                     </div>
 
                     {event.notes && (
-                      <p className="mt-1 text-xs text-[#6B7280] break-words">{event.notes}</p>
+                      <p className="mt-1 text-xs text-[#687873] break-words">{event.notes}</p>
                     )}
                   </div>
 

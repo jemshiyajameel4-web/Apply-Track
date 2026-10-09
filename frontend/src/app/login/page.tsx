@@ -65,61 +65,61 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-[#F7F8FA]">
+    <div className="min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-[#FAF7F5]">
       {/* Left Column: Dark Product Presentation (Section 10) */}
-      <div className="hidden lg:flex flex-col justify-between bg-[#132E27] p-12 text-white relative overflow-hidden">
+      <div className="hidden lg:flex flex-col justify-between bg-[#143B34] p-12 text-white relative overflow-hidden">
         {/* Subtle decorative shapes */}
-        <div className="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 rounded-full bg-[#0E6162]/20 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-80 h-80 rounded-full bg-[#DE7A96]/15 blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 rounded-full bg-[#006764]/30 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-80 h-80 rounded-full bg-[#E47F9C]/20 blur-3xl pointer-events-none" />
 
         <div className="relative z-10">
           <Logo size="lg" textColor="text-white" linkTo="/" />
         </div>
 
         <div className="relative z-10 space-y-6 max-w-md">
-          <h2 className="text-3xl font-extrabold tracking-tight text-white leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white leading-tight">
             Track every application.
             <br />
-            <span className="text-[#DE7A96]">Land your next opportunity.</span>
+            <span className="text-[#E47F9C] italic">Land your next opportunity.</span>
           </h2>
-          <p className="text-sm text-gray-200">
-            A focused, modern tracking system designed to give you total visibility and confidence in your job hunt.
+          <p className="text-sm text-[#FAF7F5]/80 leading-relaxed">
+            A focused, editorial career tracking workspace designed to give you total visibility and confidence in your job hunt.
           </p>
 
-          {/* Three Feature Points (Section 10) */}
+          {/* Three Feature Points */}
           <div className="space-y-3 pt-2">
-            <div className="flex items-center gap-3 text-sm text-gray-200">
-              <CheckCircle2 className="w-5 h-5 text-[#DE7A96] flex-shrink-0" />
+            <div className="flex items-center gap-3 text-sm text-[#FAF7F5]/90">
+              <CheckCircle2 className="w-5 h-5 text-[#E47F9C] flex-shrink-0" />
               <span>Organize applications in one unified pipeline</span>
             </div>
-            <div className="flex items-center gap-3 text-sm text-gray-200">
-              <CheckCircle2 className="w-5 h-5 text-[#DE7A96] flex-shrink-0" />
+            <div className="flex items-center gap-3 text-sm text-[#FAF7F5]/90">
+              <CheckCircle2 className="w-5 h-5 text-[#E47F9C] flex-shrink-0" />
               <span>Track interview stages and upcoming schedules</span>
             </div>
-            <div className="flex items-center gap-3 text-sm text-gray-200">
-              <CheckCircle2 className="w-5 h-5 text-[#DE7A96] flex-shrink-0" />
-              <span>Understand your search with realtime conversion data</span>
+            <div className="flex items-center gap-3 text-sm text-[#FAF7F5]/90">
+              <CheckCircle2 className="w-5 h-5 text-[#E47F9C] flex-shrink-0" />
+              <span>Understand your search with verified conversion data</span>
             </div>
           </div>
         </div>
 
-        <div className="relative z-10 text-xs text-gray-300">
+        <div className="relative z-10 text-xs text-[#DCC5D1]/80">
           © {new Date().getFullYear()} ApplyTrack. All rights reserved.
         </div>
       </div>
 
-      {/* Right Column: White Background Login Form */}
+      {/* Right Column: Warm Ivory Background Login Form */}
       <div className="flex items-center justify-center p-6 sm:p-12">
-        <div className="w-full max-w-md space-y-8 bg-white p-8 sm:p-10 rounded-2xl border border-[#E2E8E5] shadow-[0_4px_20px_rgba(19,46,39,0.05)]">
+        <div className="w-full max-w-md space-y-8 bg-white p-8 sm:p-10 rounded-3xl border border-[#E7DEDF] shadow-sm">
           <div className="text-center sm:text-left">
             <div className="lg:hidden flex justify-center mb-6">
               <Logo size="md" />
             </div>
-            <h1 className="text-2xl font-bold tracking-tight text-[#111827]">
+            <h1 className="text-2xl font-bold font-serif text-[#143B34]">
               Welcome back
             </h1>
-            <p className="mt-1.5 text-sm text-[#5A646E]">
-              Please enter your details to sign in to your dashboard.
+            <p className="mt-1.5 text-xs sm:text-sm text-[#687873]">
+              Please enter your credentials to access your dashboard.
             </p>
           </div>
 
@@ -131,7 +131,7 @@ export default function LoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               error={errors.email}
-              leftIcon={<Mail className="w-4 h-4" />}
+              leftIcon={<Mail className="w-4 h-4 text-[#98A5A1]" />}
               autoComplete="email"
             />
 
@@ -142,7 +142,7 @@ export default function LoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               error={errors.password}
-              leftIcon={<Lock className="w-4 h-4" />}
+              leftIcon={<Lock className="w-4 h-4 text-[#98A5A1]" />}
               autoComplete="current-password"
             />
 
@@ -150,7 +150,7 @@ export default function LoginPage() {
               type="submit"
               variant="primary"
               isLoading={isLoading}
-              className="w-full mt-2"
+              className="w-full mt-2 bg-[#006764] hover:bg-[#005250] text-white shadow-xs"
               rightIcon={<ArrowRight className="w-4 h-4" />}
             >
               Sign In
@@ -158,22 +158,22 @@ export default function LoginPage() {
           </form>
 
           {/* Demo Account Quick Fill Button */}
-          <div className="pt-2 border-t border-gray-100 text-center">
+          <div className="pt-2 border-t border-[#E7DEDF]/50 text-center">
             <button
               type="button"
               onClick={fillDemoCredentials}
-              className="inline-flex items-center gap-1.5 text-xs text-[#0E6162] hover:text-[#094849] font-semibold transition-colors bg-[#E7F3F3] px-3 py-1.5 rounded-lg border border-[#CCE7E8]"
+              className="inline-flex items-center gap-1.5 text-xs text-[#006764] hover:text-[#143B34] font-semibold transition-colors bg-[#E6F3F2] px-3 py-1.5 rounded-xl border border-[#B2DCDA]"
             >
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Autofill Demo Credentials (demo@applytrack.io)</span>
+              <Sparkles className="w-3.5 h-3.5 text-[#E47F9C]" />
+              <span>Autofill Demo (demo@applytrack.io)</span>
             </button>
           </div>
 
-          <p className="text-center text-xs text-[#5A646E]">
+          <p className="text-center text-xs text-[#687873]">
             Don&apos;t have an account?{" "}
             <Link
               href="/register"
-              className="font-semibold text-[#0E6162] hover:underline"
+              className="font-bold text-[#006764] hover:underline"
             >
               Create one free
             </Link>

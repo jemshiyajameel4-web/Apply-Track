@@ -83,45 +83,45 @@ export function getStatusBadgeStyle(status: ApplicationStatus): {
   switch (status) {
     case "Applied":
       return {
-        bg: "bg-[#E7F3F3]",
-        text: "text-[#0E6162]",
-        dot: "bg-[#0E6162]",
-        border: "border-[#CCE7E8]",
+        bg: "bg-[#E6F3F2]",
+        text: "text-[#006764]",
+        dot: "bg-[#006764]",
+        border: "border-[#B2DCDA]",
       };
     case "Interview":
       return {
-        bg: "bg-[#F3E9EE]",
-        text: "text-[#844C6A]",
-        dot: "bg-[#844C6A]",
-        border: "border-[#D8C2CE]",
+        bg: "bg-[#F5EEF2]",
+        text: "text-[#925775]",
+        dot: "bg-[#925775]",
+        border: "border-[#DCC5D1]",
       };
     case "Technical Round":
       return {
-        bg: "bg-[#FCF2F5]",
-        text: "text-[#DE7A96]",
-        dot: "bg-[#DE7A96]",
-        border: "border-[#F7C5D4]",
+        bg: "bg-[#FDF1F4]",
+        text: "text-[#C96582]",
+        dot: "bg-[#E47F9C]",
+        border: "border-[#F7C9D6]",
       };
     case "Offer":
       return {
-        bg: "bg-[#E7EFEA]",
-        text: "text-[#132E27]",
-        dot: "bg-[#132E27]",
-        border: "border-[#C4D9CD]",
+        bg: "bg-[#E8F3EE]",
+        text: "text-[#143B34]",
+        dot: "bg-[#143B34]",
+        border: "border-[#C5DFD2]",
       };
     case "Rejected":
       return {
-        bg: "bg-[#F2EFF1]",
-        text: "text-[#6F5B66]",
-        dot: "bg-[#8E7985]",
-        border: "border-[#DDD5D9]",
+        bg: "bg-[#F5EFF2]",
+        text: "text-[#7A6A72]",
+        dot: "bg-[#9E8C95]",
+        border: "border-[#E5D9DE]",
       };
     default:
       return {
-        bg: "bg-gray-100",
-        text: "text-gray-700",
-        dot: "bg-gray-500",
-        border: "border-gray-200",
+        bg: "bg-[#FAF7F5]",
+        text: "text-[#687873]",
+        dot: "bg-[#98A5A1]",
+        border: "border-[#E7DEDF]",
       };
   }
 }

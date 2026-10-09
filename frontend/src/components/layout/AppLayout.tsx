@@ -43,10 +43,10 @@ export function AppLayout({
 
   if (isLoading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[#F7F8FA]">
+      <div className="flex min-h-screen items-center justify-center bg-[#FAF7F5]">
         <div className="flex flex-col items-center gap-3">
-          <Loader2 className="h-8 w-8 animate-spin text-[#0E6162]" />
-          <p className="text-sm font-medium text-[#5A646E]">
+          <Loader2 className="h-8 w-8 animate-spin text-[#006764]" />
+          <p className="text-sm font-medium text-[#687873]">
             Loading ApplyTrack...
           </p>
         </div>
@@ -59,9 +59,9 @@ export function AppLayout({
   }
 
   return (
-    <div className="flex min-h-screen bg-[#F7F8FA] text-[#111827] w-full overflow-x-hidden">
-      {/* Desktop Sidebar (Fixed 240px) */}
-      <div className="hidden lg:fixed lg:inset-y-0 lg:z-30 lg:flex lg:w-[240px] lg:flex-col">
+    <div className="flex min-h-screen bg-[#FAF7F5] text-[#19332F] w-full overflow-x-hidden">
+      {/* Desktop Sidebar (Fixed 248px) */}
+      <div className="hidden lg:fixed lg:inset-y-0 lg:z-30 lg:flex lg:w-[248px] lg:flex-col">
         <Sidebar />
       </div>
 
@@ -70,19 +70,19 @@ export function AppLayout({
         <div className="fixed inset-0 z-50 lg:hidden">
           {/* Backdrop Overlay */}
           <div
-            className="fixed inset-0 bg-slate-900/40 backdrop-blur-xs transition-opacity animate-in fade-in"
+            className="fixed inset-0 bg-[#143B34]/60 backdrop-blur-xs transition-opacity animate-in fade-in"
             onClick={() => setMobileMenuOpen(false)}
           />
 
           {/* Sliding Sidebar */}
-          <div className="fixed inset-y-0 left-0 w-[260px] bg-white shadow-2xl transition-transform animate-in slide-in-from-left duration-200">
+          <div className="fixed inset-y-0 left-0 w-[248px] bg-[#143B34] shadow-2xl transition-transform animate-in slide-in-from-left duration-200">
             <Sidebar onCloseMobile={() => setMobileMenuOpen(false)} />
           </div>
         </div>
       )}
 
       {/* Main Content Area */}
-      <div className="flex flex-1 flex-col lg:pl-[240px] w-full min-w-0 overflow-x-hidden">
+      <div className="flex flex-1 flex-col lg:pl-[248px] w-full min-w-0 overflow-x-hidden">
         <Header
           title={title}
           subtitle={subtitle}

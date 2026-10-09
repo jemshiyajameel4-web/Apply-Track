@@ -1,13 +1,12 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-interface StatCardProps {
+export interface StatCardProps {
   title: string;
   value: number | string;
   subtitle?: string;
   icon: React.ReactNode;
-  iconBgColor?: string;
-  iconColor?: string;
+  variant?: "teal" | "mauve" | "forest" | "blush" | "white";
   trend?: string;
 }
 
@@ -16,41 +15,81 @@ export function StatCard({
   value,
   subtitle,
   icon,
-  iconBgColor = "bg-[#E7F3F3]",
-  iconColor = "text-[#0E6162]",
+  variant = "white",
   trend,
 }: StatCardProps) {
+  const variantStyles = {
+    teal: {
+      card: "bg-white border-[#E7DEDF] hover:border-[#006764]",
+      iconBg: "bg-[#E6F3F2] text-[#006764] border border-[#B2DCDA]",
+      valueColor: "text-[#19332F]",
+      subtleDot: "bg-[#006764]",
+    },
+    mauve: {
+      card: "bg-white border-[#E7DEDF] hover:border-[#925775]",
+      iconBg: "bg-[#F5EEF2] text-[#925775] border border-[#DCC5D1]",
+      valueColor: "text-[#19332F]",
+      subtleDot: "bg-[#925775]",
+    },
+    forest: {
+      card: "bg-white border-[#E7DEDF] hover:border-[#143B34]",
+      iconBg: "bg-[#E8F3EE] text-[#143B34] border border-[#C5DFD2]",
+      valueColor: "text-[#19332F]",
+      subtleDot: "bg-[#143B34]",
+    },
+    blush: {
+      card: "bg-white border-[#E7DEDF] hover:border-[#E47F9C]",
+      iconBg: "bg-[#FDF1F4] text-[#C96582] border border-[#F7C9D6]",
+      valueColor: "text-[#19332F]",
+      subtleDot: "bg-[#E47F9C]",
+    },
+    white: {
+      card: "bg-white border-[#E7DEDF] hover:border-[#006764]",
+      iconBg: "bg-[#FAF7F5] text-[#143B34] border border-[#E7DEDF]",
+      valueColor: "text-[#19332F]",
+      subtleDot: "bg-[#006764]",
+    },
+  };
+
+  const currentVariant = variantStyles[variant];
+
   return (
-    <div className="rounded-xl border border-[#E5E7EB] bg-white p-5 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all hover:border-gray-300">
+    <div
+      className={cn(
+        "rounded-2xl p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md relative overflow-hidden group",
+        currentVariant.card
+      )}
+    >
+      {/* Top subtle accent highlight */}
       <div className="flex items-center justify-between">
         <div
           className={cn(
-            "flex h-10 w-10 items-center justify-center rounded-lg flex-shrink-0",
-            iconBgColor,
-            iconColor
+            "flex h-11 w-11 items-center justify-center rounded-xl flex-shrink-0 transition-transform group-hover:scale-105 duration-200",
+            currentVariant.iconBg
           )}
         >
           {icon}
         </div>
 
         {trend && (
-          <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700">
+          <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-[#E8F3EE] text-[#143B34] border border-[#C5DFD2]">
             {trend}
           </span>
         )}
       </div>
 
       <div className="mt-4">
-        <p className="text-xs font-semibold uppercase tracking-wider text-[#6B7280]">
+        <p className="text-xs font-semibold uppercase tracking-wider text-[#687873]">
           {title}
         </p>
-        <p className="mt-1 text-2xl sm:text-3xl font-bold text-[#111827] tracking-tight">
+        <p className={cn("mt-1 text-2xl sm:text-3xl font-extrabold tracking-tight font-sans", currentVariant.valueColor)}>
           {value}
         </p>
         {subtitle && (
-          <p className="mt-1 text-xs text-[#9CA3AF]">{subtitle}</p>
+          <p className="mt-1 text-xs text-[#98A5A1] font-normal leading-relaxed">{subtitle}</p>
         )}
       </div>
     </div>
   );
 }
+

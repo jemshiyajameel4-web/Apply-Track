@@ -64,21 +64,21 @@ export default function ProfilePage() {
   return (
     <AppLayout
       title="User Profile"
-      subtitle="Manage your account profile information."
+      subtitle="Manage your personal career account and contact details."
       showAddButton={false}
     >
       <div className="space-y-6 max-w-2xl">
         {/* Profile Identity Card */}
-        <div className="rounded-xl border border-[#E2E8E5] bg-white p-6 shadow-xs flex items-center gap-4">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#0E6162] text-white font-bold text-xl flex-shrink-0 shadow-sm">
+        <div className="rounded-2xl border border-[#E7DEDF] bg-white p-6 shadow-sm flex items-center gap-4">
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#006764] text-white font-bold text-xl flex-shrink-0 shadow-sm border-2 border-[#E47F9C]/40">
             {userInitials}
           </div>
           <div>
-            <h2 className="text-xl font-bold text-[#111827]">
+            <h2 className="text-xl font-bold font-serif text-[#143B34]">
               {user?.full_name}
             </h2>
-            <p className="text-sm text-[#5A646E]">{user?.email}</p>
-            <div className="flex items-center gap-1.5 text-xs text-[#8E98A2] mt-1">
+            <p className="text-xs sm:text-sm text-[#687873]">{user?.email}</p>
+            <div className="flex items-center gap-1.5 text-xs text-[#98A5A1] mt-1">
               <Calendar className="w-3.5 h-3.5" />
               <span>Member since {formatDate(user?.created_at)}</span>
             </div>
@@ -86,11 +86,11 @@ export default function ProfilePage() {
         </div>
 
         {/* Profile Edit Form */}
-        <Card>
+        <Card className="border-[#E7DEDF] rounded-2xl shadow-sm">
           <CardHeader>
             <div className="flex items-center gap-2">
-              <User className="w-4 h-4 text-[#0E6162]" />
-              <CardTitle>Personal Information</CardTitle>
+              <User className="w-4 h-4 text-[#006764]" />
+              <CardTitle className="text-base font-bold text-[#19332F]">Personal Information</CardTitle>
             </div>
           </CardHeader>
 
@@ -100,7 +100,7 @@ export default function ProfilePage() {
               required
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
-              leftIcon={<User className="w-4 h-4" />}
+              leftIcon={<User className="w-4 h-4 text-[#98A5A1]" />}
             />
 
             <Input
@@ -109,7 +109,7 @@ export default function ProfilePage() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              leftIcon={<Mail className="w-4 h-4" />}
+              leftIcon={<Mail className="w-4 h-4 text-[#98A5A1]" />}
             />
 
             <div className="pt-2 flex justify-end">
@@ -118,6 +118,7 @@ export default function ProfilePage() {
                 variant="primary"
                 isLoading={isSaving}
                 leftIcon={<Save className="w-4 h-4" />}
+                className="bg-[#006764] hover:bg-[#005250] text-white shadow-xs"
               >
                 Save Changes
               </Button>

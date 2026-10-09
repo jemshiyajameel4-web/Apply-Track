@@ -156,9 +156,9 @@ export function ApplicationForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl">
       {/* Primary Job Details Card */}
-      <div className="rounded-xl border border-[#E2E8E5] bg-white p-6 shadow-xs space-y-4">
-        <h3 className="text-base font-semibold text-[#111827] pb-3 border-b border-gray-100 flex items-center gap-2">
-          <Briefcase className="w-4 h-4 text-[#0E6162]" />
+      <div className="rounded-2xl border border-[#E7DEDF] bg-white p-6 shadow-sm space-y-4">
+        <h3 className="text-base font-bold text-[#19332F] pb-3 border-b border-[#E7DEDF]/50 flex items-center gap-2">
+          <Briefcase className="w-4 h-4 text-[#006764]" />
           <span>Job & Company Details</span>
         </h3>
 
@@ -212,8 +212,8 @@ export function ApplicationForm({
       </div>
 
       {/* Compensation Card */}
-      <div className="rounded-xl border border-[#E5E7EB] bg-white p-6 shadow-xs space-y-4">
-        <h3 className="text-base font-semibold text-[#111827] pb-3 border-b border-gray-100">
+      <div className="rounded-2xl border border-[#E7DEDF] bg-white p-6 shadow-sm space-y-4">
+        <h3 className="text-base font-bold text-[#19332F] pb-3 border-b border-[#E7DEDF]/50">
           Compensation (Optional)
         </h3>
 
@@ -257,8 +257,8 @@ export function ApplicationForm({
       </div>
 
       {/* Status & Pipeline Stage Card */}
-      <div className="rounded-xl border border-[#E5E7EB] bg-white p-6 shadow-xs space-y-4">
-        <h3 className="text-base font-semibold text-[#111827] pb-3 border-b border-gray-100">
+      <div className="rounded-2xl border border-[#E7DEDF] bg-white p-6 shadow-sm space-y-4">
+        <h3 className="text-base font-bold text-[#19332F] pb-3 border-b border-[#E7DEDF]/50">
           Pipeline Status & Timeline
         </h3>
 
@@ -289,11 +289,11 @@ export function ApplicationForm({
           />
         </div>
 
-        {/* Dynamic Interview Stage Details (Section 24) */}
+        {/* Dynamic Interview Stage Details */}
         {isInterviewActive && (
-          <div className="p-4 rounded-xl bg-[#E7F3F3] border border-[#CCE7E8] space-y-3 animate-in fade-in">
-            <div className="flex items-center gap-2 text-xs font-semibold text-[#0E6162] uppercase tracking-wider">
-              <Sparkles className="w-4 h-4" />
+          <div className="p-4 rounded-xl bg-[#F5EEF2] border border-[#DCC5D1] space-y-3 animate-in fade-in">
+            <div className="flex items-center gap-2 text-xs font-semibold text-[#925775] uppercase tracking-wider">
+              <Sparkles className="w-4 h-4 text-[#E47F9C]" />
               <span>Interview Schedule Details</span>
             </div>
 
@@ -325,8 +325,8 @@ export function ApplicationForm({
       </div>
 
       {/* Notes Card */}
-      <div className="rounded-xl border border-[#E5E7EB] bg-white p-6 shadow-xs space-y-4">
-        <h3 className="text-base font-semibold text-[#111827] pb-3 border-b border-gray-100">
+      <div className="rounded-2xl border border-[#E7DEDF] bg-white p-6 shadow-sm space-y-4">
+        <h3 className="text-base font-bold text-[#19332F] pb-3 border-b border-[#E7DEDF]/50">
           Preparation & Notes
         </h3>
 
@@ -345,6 +345,7 @@ export function ApplicationForm({
           <Button
             variant="outline"
             leftIcon={<ArrowLeft className="w-4 h-4" />}
+            className="border-[#E7DEDF] text-[#19332F] hover:bg-[#FAF7F5]"
           >
             Cancel
           </Button>
@@ -355,6 +356,7 @@ export function ApplicationForm({
           variant="primary"
           isLoading={isSubmitting}
           leftIcon={<Save className="w-4 h-4" />}
+          className="bg-[#006764] hover:bg-[#005250] text-white"
         >
           {isEdit ? "Update Application" : "Save Application"}
         </Button>

@@ -46,8 +46,8 @@ export function ApplicationFilters({
               className={cn(
                 "px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all select-none",
                 isSelected
-                  ? "bg-[#0E6162] text-white shadow-xs"
-                  : "bg-white text-[#5A646E] border border-[#E2E8E5] hover:bg-[#F8FAF9] hover:text-[#0E6162]"
+                  ? "bg-[#006764] text-white shadow-xs"
+                  : "bg-white text-[#687873] border border-[#E7DEDF] hover:bg-[#FAF7F5] hover:text-[#006764]"
               )}
             >
               {opt.label}
@@ -58,11 +58,11 @@ export function ApplicationFilters({
 
       {/* Sort Select */}
       <div className="flex items-center gap-2 flex-shrink-0 self-end sm:self-auto">
-        <label className="text-xs text-[#5A646E] whitespace-nowrap">Sort by:</label>
+        <label className="text-xs text-[#687873] whitespace-nowrap">Sort by:</label>
         <select
           value={selectedSort}
           onChange={(e) => onSortChange(e.target.value)}
-          className="rounded-lg border border-[#E2E8E5] bg-white py-1.5 pl-3 pr-8 text-xs text-[#111827] focus:border-[#0E6162] focus:outline-none focus:ring-1 focus:ring-[#0E6162]"
+          className="rounded-xl border border-[#E7DEDF] bg-white py-1.5 pl-3 pr-8 text-xs text-[#19332F] focus:border-[#006764] focus:outline-none focus:ring-1 focus:ring-[#006764]"
         >
           {sortOptions.map((opt) => (
             <option key={opt.value} value={opt.value}>

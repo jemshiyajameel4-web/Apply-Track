@@ -42,7 +42,7 @@ export function ApplicationSearch({
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder={placeholder}
-        className="w-full rounded-lg border border-[#E2E8E5] bg-white py-2 pl-9 pr-8 text-sm text-[#111827] placeholder-gray-400 transition-colors focus:border-[#0E6162] focus:outline-none focus:ring-2 focus:ring-[#E7F3F3]"
+        className="w-full rounded-xl border border-[#E7DEDF] bg-white py-2 pl-9 pr-8 text-sm text-[#19332F] placeholder-[#98A5A1] transition-colors focus:border-[#006764] focus:outline-none focus:ring-2 focus:ring-[#006764]/15"
       />
 
       {searchTerm && (
@@ -51,7 +51,7 @@ export function ApplicationSearch({
             setSearchTerm("");
             onChange("");
           }}
-          className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600"
+          className="absolute inset-y-0 right-0 flex items-center pr-3 text-[#687873] hover:text-[#19332F]"
         >
           <X className="h-4 w-4" />
         </button>

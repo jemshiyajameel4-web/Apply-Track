@@ -1,12 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/lib/auth-context";
 import { ToastProvider } from "@/components/ui/Toast";
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const dmSerif = DM_Serif_Display({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-serif",
   display: "swap",
 });
 
@@ -27,8 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="min-h-screen bg-[#F7F8FA] text-[#111827] font-sans antialiased overflow-x-hidden w-full">
+    <html lang="en" className={`${dmSans.variable} ${dmSerif.variable}`}>
+      <body className="min-h-screen bg-[#FAF7F5] text-[#19332F] font-sans antialiased overflow-x-hidden w-full selection:bg-[#E47F9C]/20 selection:text-[#143B34]">
         <AuthProvider>
           <ToastProvider>{children}</ToastProvider>
         </AuthProvider>

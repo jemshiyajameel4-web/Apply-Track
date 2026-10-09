@@ -70,18 +70,18 @@ export default function SettingsPage() {
   return (
     <AppLayout
       title="Settings"
-      subtitle="Manage your account security and preferences."
+      subtitle="Manage your account security and authentication preferences."
       showAddButton={false}
     >
       <div className="space-y-6 max-w-2xl">
         {/* Security / Password Card (Section 34) */}
-        <Card>
+        <Card className="border-[#E7DEDF] rounded-2xl shadow-sm">
           <CardHeader>
             <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-[#0E6162]" />
-              <CardTitle>Security & Password</CardTitle>
+              <Shield className="w-4 h-4 text-[#006764]" />
+              <CardTitle className="text-base font-bold text-[#19332F]">Security & Password</CardTitle>
             </div>
-            <span className="text-xs text-[#8E98A2]">Update credentials</span>
+            <span className="text-xs text-[#687873]">Update credentials</span>
           </CardHeader>
 
           <form onSubmit={handlePasswordChange} className="space-y-4">
@@ -91,7 +91,7 @@ export default function SettingsPage() {
               placeholder="••••••••"
               value={currentPassword}
               onChange={(e) => setCurrentPassword(e.target.value)}
-              leftIcon={<Lock className="w-4 h-4" />}
+              leftIcon={<Lock className="w-4 h-4 text-[#98A5A1]" />}
             />
 
             <Input
@@ -100,7 +100,7 @@ export default function SettingsPage() {
               placeholder="Min 8 chars, uppercase, lowercase, and number"
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
-              leftIcon={<Lock className="w-4 h-4" />}
+              leftIcon={<Lock className="w-4 h-4 text-[#98A5A1]" />}
             />
 
             <Input
@@ -109,7 +109,7 @@ export default function SettingsPage() {
               placeholder="Re-enter new password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              leftIcon={<Lock className="w-4 h-4" />}
+              leftIcon={<Lock className="w-4 h-4 text-[#98A5A1]" />}
             />
 
             <div className="pt-2 flex justify-end">
@@ -118,6 +118,7 @@ export default function SettingsPage() {
                 variant="primary"
                 isLoading={isUpdatingPassword}
                 leftIcon={<Save className="w-4 h-4" />}
+                className="bg-[#006764] hover:bg-[#005250] text-white shadow-xs"
               >
                 Update Password
               </Button>
@@ -126,49 +127,54 @@ export default function SettingsPage() {
         </Card>
 
         {/* Appearance Card */}
-        <Card>
+        <Card className="border-[#E7DEDF] rounded-2xl shadow-sm">
           <CardHeader>
             <div className="flex items-center gap-2">
-              <Sun className="w-4 h-4 text-amber-500" />
-              <CardTitle>Appearance & Theme</CardTitle>
+              <Sun className="w-4 h-4 text-[#925775]" />
+              <CardTitle className="text-base font-bold text-[#19332F]">Theme & Visual Mode</CardTitle>
             </div>
           </CardHeader>
 
-          <div className="flex items-center justify-between p-3 rounded-lg bg-gray-50 border border-gray-100">
+          <div className="flex items-center justify-between p-3.5 rounded-xl bg-[#FAF7F5] border border-[#E7DEDF]">
             <div>
-              <p className="text-sm font-semibold text-[#111827]">
-                Light SaaS Mode
+              <p className="text-sm font-bold text-[#19332F]">
+                Warm Editorial SaaS
               </p>
-              <p className="text-xs text-[#6B7280]">
-                ApplyTrack is optimized for clean, high-contrast light presentation.
+              <p className="text-xs text-[#687873]">
+                ApplyTrack uses an art-directed Warm Ivory and Deep Teal palette.
               </p>
             </div>
-            <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700">
+            <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-[#E6F3F2] text-[#006764] border border-[#B2DCDA]">
               <CheckCircle2 className="w-3.5 h-3.5" /> Active
             </span>
           </div>
         </Card>
 
         {/* Danger Zone */}
-        <Card className="border-red-100">
-          <CardHeader className="border-red-50">
-            <div className="flex items-center gap-2 text-[#DC2626]">
+        <Card className="border-[#F7C9D6] rounded-2xl shadow-sm">
+          <CardHeader className="border-[#F7C9D6]/40">
+            <div className="flex items-center gap-2 text-[#C96582]">
               <LogOut className="w-4 h-4" />
-              <CardTitle className="text-[#DC2626]">Account Session</CardTitle>
+              <CardTitle className="text-base font-bold text-[#C96582]">Account Session</CardTitle>
             </div>
           </CardHeader>
 
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-semibold text-[#111827]">
+              <p className="text-sm font-bold text-[#19332F]">
                 Sign Out
               </p>
-              <p className="text-xs text-[#6B7280]">
-                Terminate active session on this device.
+              <p className="text-xs text-[#687873]">
+                Terminate active session on this browser device.
               </p>
             </div>
 
-            <Button variant="danger" size="sm" onClick={() => logout()}>
+            <Button
+              variant="danger"
+              size="sm"
+              onClick={() => logout()}
+              className="bg-[#FDF1F4] border border-[#F7C9D6] text-[#C96582] hover:bg-[#fce5eb]"
+            >
               Log Out
             </Button>
           </div>

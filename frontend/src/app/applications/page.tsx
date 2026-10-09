@@ -24,6 +24,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+import { EmptyApplicationsIllustration } from "@/components/illustrations/EmptyApplicationsIllustration";
+
 export default function ApplicationsPage() {
   const { error: toastError, success: toastSuccess } = useToast();
 
@@ -101,26 +103,26 @@ export default function ApplicationsPage() {
   return (
     <AppLayout
       title="My Applications"
-      subtitle="Manage and track your job applications pipeline."
+      subtitle="Keep every opportunity organized, from your first application to your final offer."
     >
-      <div className="space-y-5">
-        {/* Controls Toolbar: Search & Filters (Sections 18, 19) */}
-        <div className="space-y-3 bg-white p-4 rounded-xl border border-[#E5E7EB] shadow-xs">
+      <div className="space-y-6">
+        {/* Controls Toolbar: Search & Filters (Section 7) */}
+        <div className="space-y-3 bg-white p-4 rounded-2xl border border-[#E7DEDF] shadow-sm">
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
             <ApplicationSearch
               value={search}
               onChange={handleSearchChange}
-              placeholder="Search companies or positions..."
+              placeholder="Search companies, job titles, or keywords..."
             />
 
             <Link href="/applications/new" className="sm:hidden">
               <Button
                 variant="primary"
                 size="sm"
-                className="w-full"
+                className="w-full bg-[#006764] hover:bg-[#005250] text-white"
                 leftIcon={<Plus className="w-4 h-4" />}
               >
-                Add Application
+                + Add Application
               </Button>
             </Link>
           </div>
@@ -135,7 +137,7 @@ export default function ApplicationsPage() {
 
         {/* List Content */}
         {loading ? (
-          <div className="bg-white rounded-xl border border-[#E5E7EB] p-4 shadow-xs">
+          <div className="bg-white rounded-2xl border border-[#E7DEDF] p-4 shadow-sm">
             <div className="hidden md:block">
               <table className="w-full">
                 <tbody>
@@ -147,39 +149,52 @@ export default function ApplicationsPage() {
               </table>
             </div>
             <div className="md:hidden space-y-3">
-              <Skeleton className="h-32 w-full rounded-xl" />
-              <Skeleton className="h-32 w-full rounded-xl" />
+              <Skeleton className="h-32 w-full rounded-2xl" />
+              <Skeleton className="h-32 w-full rounded-2xl" />
             </div>
           </div>
         ) : applications.length === 0 ? (
-          <EmptyState
-            icon={<Layers className="w-6 h-6 text-[#0E6162]" />}
-            title={
-              search || status !== "All"
+          <div className="bg-white rounded-2xl border border-[#E7DEDF] p-8 sm:p-12 text-center flex flex-col items-center justify-center shadow-sm">
+            <EmptyApplicationsIllustration className="w-44 h-44 mb-4" />
+            <h3 className="text-lg font-bold text-[#19332F] mb-1 font-serif">
+              {search || status !== "All"
                 ? "No matching applications found"
-                : "No applications yet"
-            }
-            description={
-              search || status !== "All"
-                ? "Try adjusting your search keywords or clearing filters to see more results."
-                : "Start tracking your job applications to keep your search organized."
-            }
-            actionLabel={
-              search || status !== "All" ? "Clear Filters" : "Add your first application"
-            }
-            onAction={() => {
-              if (search || status !== "All") {
-                setSearch("");
-                setStatus("All");
-                setPage(1);
-              } else {
-                window.location.href = "/applications/new";
-              }
-            }}
-          />
+                : "No applications yet"}
+            </h3>
+            <p className="text-sm text-[#687873] max-w-md mx-auto mb-6">
+              {search || status !== "All"
+                ? "Try adjusting your search keywords or clearing status filters to find your opportunities."
+                : "Start tracking your job applications to monitor interviews, notes, and milestones."}
+            </p>
+            {search || status !== "All" ? (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  setSearch("");
+                  setStatus("All");
+                  setPage(1);
+                }}
+                className="border-[#E7DEDF] text-[#19332F] hover:bg-[#FAF7F5]"
+              >
+                Clear Filters
+              </Button>
+            ) : (
+              <Link href="/applications/new">
+                <Button
+                  variant="primary"
+                  size="sm"
+                  className="bg-[#006764] hover:bg-[#005250] text-white"
+                  leftIcon={<Plus className="w-4 h-4" />}
+                >
+                  + Add Application
+                </Button>
+              </Link>
+            )}
+          </div>
         ) : (
           <>
-            {/* Desktop Table (Section 20) */}
+            {/* Desktop Table */}
             <div className="hidden md:block">
               <ApplicationTable
                 applications={applications}
@@ -187,7 +202,7 @@ export default function ApplicationsPage() {
               />
             </div>
 
-            {/* Mobile Cards (Section 21) */}
+            {/* Mobile Cards */}
             <div className="md:hidden space-y-3">
               {applications.map((app) => (
                 <ApplicationCard
@@ -198,18 +213,18 @@ export default function ApplicationsPage() {
               ))}
             </div>
 
-            {/* Server-Side Pagination Bar (Section 47) */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-white p-4 rounded-xl border border-[#E5E7EB] shadow-xs text-xs text-[#6B7280]">
+            {/* Server-Side Pagination Bar */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-white p-4 rounded-2xl border border-[#E7DEDF] shadow-sm text-xs text-[#687873]">
               <div>
                 Showing{" "}
-                <span className="font-semibold text-[#111827]">
+                <span className="font-semibold text-[#19332F]">
                   {Math.min((page - 1) * limit + 1, total)}
                 </span>{" "}
                 to{" "}
-                <span className="font-semibold text-[#111827]">
+                <span className="font-semibold text-[#19332F]">
                   {Math.min(page * limit, total)}
                 </span>{" "}
-                of <span className="font-semibold text-[#111827]">{total}</span>{" "}
+                of <span className="font-semibold text-[#19332F]">{total}</span>{" "}
                 applications
               </div>
 
@@ -220,12 +235,13 @@ export default function ApplicationsPage() {
                   disabled={page <= 1}
                   onClick={() => setPage((p) => Math.max(1, p - 1))}
                   leftIcon={<ChevronLeft className="w-3.5 h-3.5" />}
+                  className="border-[#E7DEDF] text-[#19332F] hover:bg-[#FAF7F5]"
                 >
                   Previous
                 </Button>
 
-                <div className="flex items-center gap-1 px-2">
-                  <span className="font-semibold text-[#111827]">{page}</span>
+                <div className="flex items-center gap-1 px-2 font-medium">
+                  <span className="font-semibold text-[#006764]">{page}</span>
                   <span>/</span>
                   <span>{totalPages}</span>
                 </div>
@@ -236,6 +252,7 @@ export default function ApplicationsPage() {
                   disabled={page >= totalPages}
                   onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                   rightIcon={<ChevronRight className="w-3.5 h-3.5" />}
+                  className="border-[#E7DEDF] text-[#19332F] hover:bg-[#FAF7F5]"
                 >
                   Next
                 </Button>

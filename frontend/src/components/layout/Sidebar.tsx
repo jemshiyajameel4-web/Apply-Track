@@ -8,12 +8,15 @@ import { useAuth } from "@/lib/auth-context";
 import { cn } from "@/lib/utils";
 import {
   LayoutDashboard,
-  BriefcaseBusiness,
+  Briefcase,
+  Calendar,
+  BarChart3,
   User,
   Settings,
   LogOut,
   PlusCircle,
   X,
+  Sparkles,
 } from "lucide-react";
 
 interface SidebarProps {
@@ -26,14 +29,24 @@ export function Sidebar({ onCloseMobile }: SidebarProps) {
 
   const mainNav = [
     {
-      name: "Dashboard",
+      name: "Overview",
       href: "/dashboard",
       icon: LayoutDashboard,
     },
     {
       name: "Applications",
       href: "/applications",
-      icon: BriefcaseBusiness,
+      icon: Briefcase,
+    },
+    {
+      name: "Interview Calendar",
+      href: "/interviews",
+      icon: Calendar,
+    },
+    {
+      name: "Insights",
+      href: "/insights",
+      icon: BarChart3,
     },
   ];
 
@@ -60,14 +73,18 @@ export function Sidebar({ onCloseMobile }: SidebarProps) {
     : "U";
 
   return (
-    <aside className="flex flex-col h-full w-[240px] bg-white border-r border-[#E5E7EB] select-none">
+    <aside className="relative flex flex-col h-full w-[248px] bg-[#143B34] text-[#FAF7F5] select-none border-r border-[#0D2722] overflow-hidden shadow-xl">
+      {/* Background low-contrast organic decorative shapes near bottom (Section 6.A) */}
+      <div className="pointer-events-none absolute -bottom-10 -right-10 w-44 h-44 rounded-full bg-[#006764]/20 blur-2xl" />
+      <div className="pointer-events-none absolute bottom-24 -left-12 w-32 h-32 rounded-full bg-[#925775]/15 blur-xl" />
+
       {/* Brand Header */}
-      <div className="h-16 flex items-center justify-between px-5 border-b border-gray-100">
-        <Logo size="md" linkTo="/dashboard" />
+      <div className="h-16 flex items-center justify-between px-5 border-b border-[#1D544A]/40 flex-shrink-0">
+        <Logo size="md" textColor="text-white" linkTo="/dashboard" />
         {onCloseMobile && (
           <button
             onClick={onCloseMobile}
-            className="lg:hidden p-1.5 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
+            className="lg:hidden p-1.5 rounded-lg text-gray-300 hover:text-white hover:bg-[#1D544A] transition-colors"
             aria-label="Close sidebar"
           >
             <X className="w-5 h-5" />
@@ -75,29 +92,29 @@ export function Sidebar({ onCloseMobile }: SidebarProps) {
         )}
       </div>
 
-
-      {/* Quick Action */}
-      <div className="p-4 pb-2">
+      {/* Quick Action Button */}
+      <div className="p-3.5 pb-2 flex-shrink-0">
         <Link
           href="/applications/new"
           onClick={onCloseMobile}
-          className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded-lg bg-[#0E6162] text-white text-sm font-medium hover:bg-[#094849] transition-colors shadow-xs"
+          className="flex items-center justify-center gap-2 w-full py-2.5 px-3.5 rounded-xl bg-[#006764] text-white text-xs font-semibold hover:bg-[#005250] active:bg-[#003D3B] transition-all shadow-sm hover:shadow-md border border-[#006764]/60 group"
         >
-          <PlusCircle className="w-4 h-4" />
-          <span>Add Application</span>
+          <PlusCircle className="w-4 h-4 text-[#E47F9C] group-hover:rotate-90 transition-transform duration-200" />
+          <span>+ Add Application</span>
         </Link>
       </div>
 
       {/* Navigation Links */}
-      <div className="flex-1 px-3 py-2 space-y-6 overflow-y-auto">
+      <div className="flex-1 px-3 py-3 space-y-6 overflow-y-auto z-10 scrollbar-none">
+        {/* Main Section */}
         <div className="space-y-1">
-          <p className="px-3 text-[11px] font-semibold uppercase tracking-wider text-[#8E98A2]">
-            Overview
+          <p className="px-3 text-[10px] font-bold uppercase tracking-wider text-[#DCC5D1]/60">
+            Menu
           </p>
           {mainNav.map((item) => {
             const isActive =
               pathname === item.href ||
-              (item.href === "/applications" && pathname.startsWith("/applications"));
+              (item.href === "/applications" && pathname.startsWith("/applications") && pathname !== "/applications/new");
             const Icon = item.icon;
 
             return (
@@ -106,23 +123,30 @@ export function Sidebar({ onCloseMobile }: SidebarProps) {
                 href={item.href}
                 onClick={onCloseMobile}
                 className={cn(
-                  "flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
+                  "flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-medium transition-all duration-150 relative",
                   isActive
-                    ? "bg-[#E7F3F3] text-[#0E6162] font-semibold"
-                    : "text-[#5A646E] hover:bg-[#F3E9EE]/60 hover:text-[#844C6A]"
+                    ? "bg-[#006764] text-white font-semibold shadow-xs"
+                    : "text-[#FAF7F5]/75 hover:bg-[#1D544A]/60 hover:text-white"
                 )}
               >
+                {isActive && (
+                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-[#E47F9C] rounded-r-full" />
+                )}
                 <Icon
-                  className={cn("w-4 h-4", isActive ? "text-[#0E6162]" : "text-[#8E98A2]")}
+                  className={cn(
+                    "w-4 h-4 flex-shrink-0 transition-colors",
+                    isActive ? "text-[#E47F9C]" : "text-[#DCC5D1]/70"
+                  )}
                 />
-                <span>{item.name}</span>
+                <span className="truncate">{item.name}</span>
               </Link>
             );
           })}
         </div>
 
-        <div className="space-y-1 pt-2 border-t border-gray-100">
-          <p className="px-3 text-[11px] font-semibold uppercase tracking-wider text-[#8E98A2]">
+        {/* Account Section */}
+        <div className="space-y-1 pt-3 border-t border-[#1D544A]/40">
+          <p className="px-3 text-[10px] font-bold uppercase tracking-wider text-[#DCC5D1]/60">
             Account
           </p>
           {secondaryNav.map((item) => {
@@ -135,43 +159,53 @@ export function Sidebar({ onCloseMobile }: SidebarProps) {
                 href={item.href}
                 onClick={onCloseMobile}
                 className={cn(
-                  "flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
+                  "flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-medium transition-all duration-150 relative",
                   isActive
-                    ? "bg-[#E7F3F3] text-[#0E6162] font-semibold"
-                    : "text-[#5A646E] hover:bg-[#F3E9EE]/60 hover:text-[#844C6A]"
+                    ? "bg-[#006764] text-white font-semibold shadow-xs"
+                    : "text-[#FAF7F5]/75 hover:bg-[#1D544A]/60 hover:text-white"
                 )}
               >
+                {isActive && (
+                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-[#E47F9C] rounded-r-full" />
+                )}
                 <Icon
-                  className={cn("w-4 h-4", isActive ? "text-[#0E6162]" : "text-[#8E98A2]")}
+                  className={cn(
+                    "w-4 h-4 flex-shrink-0 transition-colors",
+                    isActive ? "text-[#E47F9C]" : "text-[#DCC5D1]/70"
+                  )}
                 />
-                <span>{item.name}</span>
+                <span className="truncate">{item.name}</span>
               </Link>
             );
           })}
         </div>
       </div>
 
-      {/* User Footer Profile */}
-      <div className="p-3 border-t border-gray-100 bg-[#F8FAF9]">
-        <div className="flex items-center justify-between p-2 rounded-lg">
-          <div className="flex items-center gap-2.5 min-w-0">
-            <div className="w-8 h-8 rounded-full bg-[#0E6162] text-white flex items-center justify-center font-semibold text-xs flex-shrink-0">
+      {/* User Footer Profile (Section 6.A) */}
+      <div className="p-3 border-t border-[#1D544A]/40 bg-[#0D2722]/60 z-10 flex-shrink-0">
+        <div className="flex items-center justify-between p-1.5 rounded-xl">
+          <Link
+            href="/profile"
+            onClick={onCloseMobile}
+            className="flex items-center gap-2.5 min-w-0 hover:opacity-90 transition-opacity"
+          >
+            <div className="w-8 h-8 rounded-full bg-[#006764] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 border border-[#E47F9C]/40">
               {userInitials}
             </div>
             <div className="min-w-0">
-              <p className="text-xs font-semibold text-[#111827] truncate">
+              <p className="text-xs font-semibold text-white truncate">
                 {user?.full_name || "Job Seeker"}
               </p>
-              <p className="text-[11px] text-[#5A646E] truncate">
+              <p className="text-[10px] text-[#DCC5D1]/70 truncate">
                 {user?.email || "user@applytrack.io"}
               </p>
             </div>
-          </div>
+          </Link>
 
           <button
             onClick={() => logout()}
             title="Sign out"
-            className="p-1.5 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+            className="p-1.5 text-gray-300 hover:text-[#E47F9C] hover:bg-[#1D544A] rounded-lg transition-colors flex-shrink-0"
           >
             <LogOut className="w-4 h-4" />
           </button>
@@ -180,3 +214,4 @@ export function Sidebar({ onCloseMobile }: SidebarProps) {
     </aside>
   );
 }
+

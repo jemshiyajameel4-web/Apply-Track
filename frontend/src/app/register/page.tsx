@@ -83,58 +83,58 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-[#F7F8FA]">
+    <div className="min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-[#FAF7F5]">
       {/* Left Column: Brand/Product presentation */}
-      <div className="hidden lg:flex flex-col justify-between bg-[#132E27] p-12 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 rounded-full bg-[#0E6162]/20 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-80 h-80 rounded-full bg-[#DE7A96]/15 blur-3xl pointer-events-none" />
+      <div className="hidden lg:flex flex-col justify-between bg-[#143B34] p-12 text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 rounded-full bg-[#006764]/30 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-80 h-80 rounded-full bg-[#E47F9C]/20 blur-3xl pointer-events-none" />
 
         <div className="relative z-10">
           <Logo size="lg" textColor="text-white" linkTo="/" />
         </div>
 
         <div className="relative z-10 space-y-6 max-w-md">
-          <h2 className="text-3xl font-extrabold tracking-tight text-white leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white leading-tight">
             Start organizing your
             <br />
-            <span className="text-[#DE7A96]">career journey today.</span>
+            <span className="text-[#E47F9C] italic">career journey today.</span>
           </h2>
-          <p className="text-sm text-gray-200">
+          <p className="text-sm text-[#FAF7F5]/80 leading-relaxed">
             Create your account to unlock application pipelines, interview schedules, and realtime job-search metrics.
           </p>
 
           <div className="space-y-3 pt-2">
-            <div className="flex items-center gap-3 text-sm text-gray-200">
-              <CheckCircle2 className="w-5 h-5 text-[#DE7A96] flex-shrink-0" />
+            <div className="flex items-center gap-3 text-sm text-[#FAF7F5]/90">
+              <CheckCircle2 className="w-5 h-5 text-[#E47F9C] flex-shrink-0" />
               <span>100% Free for job seekers and students</span>
             </div>
-            <div className="flex items-center gap-3 text-sm text-gray-200">
-              <CheckCircle2 className="w-5 h-5 text-[#DE7A96] flex-shrink-0" />
+            <div className="flex items-center gap-3 text-sm text-[#FAF7F5]/90">
+              <CheckCircle2 className="w-5 h-5 text-[#E47F9C] flex-shrink-0" />
               <span>Full private data isolation</span>
             </div>
-            <div className="flex items-center gap-3 text-sm text-gray-200">
-              <CheckCircle2 className="w-5 h-5 text-[#DE7A96] flex-shrink-0" />
+            <div className="flex items-center gap-3 text-sm text-[#FAF7F5]/90">
+              <CheckCircle2 className="w-5 h-5 text-[#E47F9C] flex-shrink-0" />
               <span>No credit card required</span>
             </div>
           </div>
         </div>
 
-        <div className="relative z-10 text-xs text-gray-300">
+        <div className="relative z-10 text-xs text-[#DCC5D1]/80">
           © {new Date().getFullYear()} ApplyTrack. All rights reserved.
         </div>
       </div>
 
       {/* Right Column: Registration Form */}
       <div className="flex items-center justify-center p-6 sm:p-12">
-        <div className="w-full max-w-md space-y-6 bg-white p-8 sm:p-10 rounded-2xl border border-[#E2E8E5] shadow-[0_4px_20px_rgba(19,46,39,0.05)]">
+        <div className="w-full max-w-md space-y-6 bg-white p-8 sm:p-10 rounded-3xl border border-[#E7DEDF] shadow-sm">
           <div className="text-center sm:text-left">
             <div className="lg:hidden flex justify-center mb-6">
               <Logo size="md" />
             </div>
-            <h1 className="text-2xl font-bold tracking-tight text-[#111827]">
+            <h1 className="text-2xl font-bold font-serif text-[#143B34]">
               Create an account
             </h1>
-            <p className="mt-1.5 text-sm text-[#5A646E]">
+            <p className="mt-1.5 text-xs sm:text-sm text-[#687873]">
               Get started with your personalized job tracker.
             </p>
           </div>
@@ -146,7 +146,7 @@ export default function RegisterPage() {
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               error={errors.fullName}
-              leftIcon={<UserIcon className="w-4 h-4" />}
+              leftIcon={<UserIcon className="w-4 h-4 text-[#98A5A1]" />}
             />
 
             <Input
@@ -156,7 +156,7 @@ export default function RegisterPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               error={errors.email}
-              leftIcon={<Mail className="w-4 h-4" />}
+              leftIcon={<Mail className="w-4 h-4 text-[#98A5A1]" />}
             />
 
             <Input
@@ -166,7 +166,7 @@ export default function RegisterPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               error={errors.password}
-              leftIcon={<Lock className="w-4 h-4" />}
+              leftIcon={<Lock className="w-4 h-4 text-[#98A5A1]" />}
             />
 
             <Input
@@ -176,25 +176,25 @@ export default function RegisterPage() {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               error={errors.confirmPassword}
-              leftIcon={<Lock className="w-4 h-4" />}
+              leftIcon={<Lock className="w-4 h-4 text-[#98A5A1]" />}
             />
 
             <Button
               type="submit"
               variant="primary"
               isLoading={isLoading}
-              className="w-full mt-2"
+              className="w-full mt-2 bg-[#006764] hover:bg-[#005250] text-white shadow-xs"
               rightIcon={<ArrowRight className="w-4 h-4" />}
             >
               Create Account
             </Button>
           </form>
 
-          <p className="text-center text-xs text-[#5A646E]">
+          <p className="text-center text-xs text-[#687873]">
             Already have an account?{" "}
             <Link
               href="/login"
-              className="font-semibold text-[#0E6162] hover:underline"
+              className="font-bold text-[#006764] hover:underline"
             >
               Sign in
             </Link>
