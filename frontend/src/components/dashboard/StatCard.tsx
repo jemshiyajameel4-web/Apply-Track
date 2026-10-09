@@ -16,8 +16,8 @@ export function StatCard({
   value,
   subtitle,
   icon,
-  iconBgColor = "bg-[#EEF2FF]",
-  iconColor = "text-[#4F46E5]",
+  iconBgColor = "bg-[#E7F3F3]",
+  iconColor = "text-[#0E6162]",
   trend,
 }: StatCardProps) {
   return (

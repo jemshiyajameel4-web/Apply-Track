@@ -83,31 +83,31 @@ class DashboardService:
                 name="Applied",
                 status=ApplicationStatus.APPLIED,
                 count=stats.applied_count,
-                color="#4F46E5",  # Brand Indigo
+                color="#0E6162",  # Brand Teal
             ),
             StatusDistributionItem(
                 name="Interview",
                 status=ApplicationStatus.INTERVIEW,
                 count=stats.interview_count,
-                color="#9333EA",  # Purple
+                color="#844C6A",  # Mauve / Plum
             ),
             StatusDistributionItem(
                 name="Technical Round",
                 status=ApplicationStatus.TECHNICAL_ROUND,
                 count=stats.technical_round_count,
-                color="#EA580C",  # Orange
+                color="#DE7A96",  # Rose / Coral Pink
             ),
             StatusDistributionItem(
                 name="Offer",
                 status=ApplicationStatus.OFFER,
                 count=stats.offer_count,
-                color="#16A34A",  # Green
+                color="#132E27",  # Deep Forest Pine
             ),
             StatusDistributionItem(
                 name="Rejected",
                 status=ApplicationStatus.REJECTED,
                 count=stats.rejected_count,
-                color="#DC2626",  # Red
+                color="#A38F9B",  # Muted Mauve-Gray
             ),
         ]
 

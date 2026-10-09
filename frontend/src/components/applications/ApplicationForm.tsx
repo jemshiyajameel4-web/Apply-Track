@@ -156,9 +156,9 @@ export function ApplicationForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl">
       {/* Primary Job Details Card */}
-      <div className="rounded-xl border border-[#E5E7EB] bg-white p-6 shadow-xs space-y-4">
+      <div className="rounded-xl border border-[#E2E8E5] bg-white p-6 shadow-xs space-y-4">
         <h3 className="text-base font-semibold text-[#111827] pb-3 border-b border-gray-100 flex items-center gap-2">
-          <Briefcase className="w-4 h-4 text-[#4F46E5]" />
+          <Briefcase className="w-4 h-4 text-[#0E6162]" />
           <span>Job & Company Details</span>
         </h3>
 
@@ -291,8 +291,8 @@ export function ApplicationForm({
 
         {/* Dynamic Interview Stage Details (Section 24) */}
         {isInterviewActive && (
-          <div className="p-4 rounded-xl bg-[#EEF2FF]/60 border border-[#C7D2FE] space-y-3 animate-in fade-in">
-            <div className="flex items-center gap-2 text-xs font-semibold text-[#4F46E5] uppercase tracking-wider">
+          <div className="p-4 rounded-xl bg-[#E7F3F3] border border-[#CCE7E8] space-y-3 animate-in fade-in">
+            <div className="flex items-center gap-2 text-xs font-semibold text-[#0E6162] uppercase tracking-wider">
               <Sparkles className="w-4 h-4" />
               <span>Interview Schedule Details</span>
             </div>

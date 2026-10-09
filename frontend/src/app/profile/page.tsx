@@ -69,16 +69,16 @@ export default function ProfilePage() {
     >
       <div className="space-y-6 max-w-2xl">
         {/* Profile Identity Card */}
-        <div className="rounded-xl border border-[#E5E7EB] bg-white p-6 shadow-xs flex items-center gap-4">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#4F46E5] text-white font-bold text-xl flex-shrink-0 shadow-sm">
+        <div className="rounded-xl border border-[#E2E8E5] bg-white p-6 shadow-xs flex items-center gap-4">
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#0E6162] text-white font-bold text-xl flex-shrink-0 shadow-sm">
             {userInitials}
           </div>
           <div>
             <h2 className="text-xl font-bold text-[#111827]">
               {user?.full_name}
             </h2>
-            <p className="text-sm text-[#6B7280]">{user?.email}</p>
-            <div className="flex items-center gap-1.5 text-xs text-[#9CA3AF] mt-1">
+            <p className="text-sm text-[#5A646E]">{user?.email}</p>
+            <div className="flex items-center gap-1.5 text-xs text-[#8E98A2] mt-1">
               <Calendar className="w-3.5 h-3.5" />
               <span>Member since {formatDate(user?.created_at)}</span>
             </div>
@@ -89,7 +89,7 @@ export default function ProfilePage() {
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
-              <User className="w-4 h-4 text-[#4F46E5]" />
+              <User className="w-4 h-4 text-[#0E6162]" />
               <CardTitle>Personal Information</CardTitle>
             </div>
           </CardHeader>

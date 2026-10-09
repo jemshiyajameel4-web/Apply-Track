@@ -106,7 +106,7 @@ export default function ApplicationDetailPage() {
         <div className="rounded-xl border border-[#E5E7EB] bg-white p-4 sm:p-6 shadow-xs w-full min-w-0">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 w-full min-w-0">
             <div className="flex items-start gap-3 sm:gap-4 min-w-0">
-              <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-[#EEF2FF] text-[#4F46E5] font-bold text-sm sm:text-base flex-shrink-0 border border-[#C7D2FE]/60">
+              <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-[#E7F3F3] text-[#0E6162] font-bold text-sm sm:text-base flex-shrink-0 border border-[#CCE7E8]">
                 {application.company_name.slice(0, 2).toUpperCase()}
               </div>
               <div className="min-w-0">
@@ -116,7 +116,7 @@ export default function ApplicationDetailPage() {
                   </h2>
                   <ApplicationStatusBadge status={application.status} size="sm" />
                 </div>
-                <p className="text-xs sm:text-sm font-medium text-[#6B7280] mt-0.5 sm:mt-1 break-words">
+                <p className="text-xs sm:text-sm font-medium text-[#5A646E] mt-0.5 sm:mt-1 break-words">
                   {application.position}
                 </p>
               </div>
@@ -129,9 +129,9 @@ export default function ApplicationDetailPage() {
                   href={application.job_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E5E7EB] text-xs font-semibold text-[#111827] hover:bg-gray-50 transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E2E8E5] text-xs font-semibold text-[#111827] hover:bg-[#F8FAF9] transition-colors"
                 >
-                  <ExternalLink className="w-3.5 h-3.5 text-[#4F46E5]" />
+                  <ExternalLink className="w-3.5 h-3.5 text-[#0E6162]" />
                   <span>Job Link</span>
                 </a>
               )}
@@ -166,14 +166,14 @@ export default function ApplicationDetailPage() {
             <Card className="w-full min-w-0">
               <CardHeader>
                 <div className="flex items-center gap-2">
-                  <Briefcase className="w-4 h-4 text-[#4F46E5]" />
+                  <Briefcase className="w-4 h-4 text-[#0E6162]" />
                   <CardTitle>Role Information</CardTitle>
                 </div>
               </CardHeader>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-xs">
-                <div className="p-3 rounded-lg bg-gray-50 border border-gray-100">
-                  <span className="text-[#9CA3AF] block mb-1 font-medium">
+                <div className="p-3 rounded-lg bg-[#F8FAF9] border border-gray-100">
+                  <span className="text-[#8E98A2] block mb-1 font-medium">
                     Applied Date
                   </span>
                   <span className="text-xs sm:text-sm font-semibold text-[#111827]">
@@ -181,8 +181,8 @@ export default function ApplicationDetailPage() {
                   </span>
                 </div>
 
-                <div className="p-3 rounded-lg bg-gray-50 border border-gray-100">
-                  <span className="text-[#9CA3AF] block mb-1 font-medium">
+                <div className="p-3 rounded-lg bg-[#F8FAF9] border border-gray-100">
+                  <span className="text-[#8E98A2] block mb-1 font-medium">
                     Location
                   </span>
                   <span className="text-xs sm:text-sm font-semibold text-[#111827] break-words">
@@ -190,8 +190,8 @@ export default function ApplicationDetailPage() {
                   </span>
                 </div>
 
-                <div className="p-3 rounded-lg bg-gray-50 border border-gray-100">
-                  <span className="text-[#9CA3AF] block mb-1 font-medium">
+                <div className="p-3 rounded-lg bg-[#F8FAF9] border border-gray-100">
+                  <span className="text-[#8E98A2] block mb-1 font-medium">
                     Target Compensation
                   </span>
                   <span className="text-xs sm:text-sm font-semibold text-[#111827]">
@@ -203,8 +203,8 @@ export default function ApplicationDetailPage() {
                   </span>
                 </div>
 
-                <div className="p-3 rounded-lg bg-gray-50 border border-gray-100">
-                  <span className="text-[#9CA3AF] block mb-1 font-medium">
+                <div className="p-3 rounded-lg bg-[#F8FAF9] border border-gray-100">
+                  <span className="text-[#8E98A2] block mb-1 font-medium">
                     Last Updated
                   </span>
                   <span className="text-xs sm:text-sm font-semibold text-[#111827]">
@@ -222,14 +222,14 @@ export default function ApplicationDetailPage() {
               <Card className="w-full min-w-0">
                 <CardHeader>
                   <div className="flex items-center gap-2">
-                    <Video className="w-4 h-4 text-[#9333EA]" />
+                    <Video className="w-4 h-4 text-[#844C6A]" />
                     <CardTitle>Interview Schedule</CardTitle>
                   </div>
                 </CardHeader>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-xs">
-                  <div className="p-3 rounded-lg bg-purple-50/60 border border-purple-100">
-                    <span className="text-purple-700 block mb-1 font-medium">
+                  <div className="p-3 rounded-lg bg-[#F3E9EE] border border-[#D8C2CE]">
+                    <span className="text-[#844C6A] block mb-1 font-semibold">
                       Scheduled Date
                     </span>
                     <span className="text-xs sm:text-sm font-semibold text-[#111827]">
@@ -239,8 +239,8 @@ export default function ApplicationDetailPage() {
                     </span>
                   </div>
 
-                  <div className="p-3 rounded-lg bg-purple-50/60 border border-purple-100">
-                    <span className="text-purple-700 block mb-1 font-medium">
+                  <div className="p-3 rounded-lg bg-[#F3E9EE] border border-[#D8C2CE]">
+                    <span className="text-[#844C6A] block mb-1 font-semibold">
                       Interview Stage
                     </span>
                     <span className="text-xs sm:text-sm font-semibold text-[#111827] break-words">
@@ -255,17 +255,17 @@ export default function ApplicationDetailPage() {
             <Card className="w-full min-w-0">
               <CardHeader>
                 <div className="flex items-center gap-2">
-                  <FileText className="w-4 h-4 text-[#4F46E5]" />
+                  <FileText className="w-4 h-4 text-[#0E6162]" />
                   <CardTitle>Notes & Preparation</CardTitle>
                 </div>
               </CardHeader>
 
               {application.notes ? (
-                <div className="p-3.5 sm:p-4 rounded-lg bg-gray-50 border border-gray-100 text-xs sm:text-sm text-[#111827] whitespace-pre-wrap break-words leading-relaxed">
+                <div className="p-3.5 sm:p-4 rounded-lg bg-[#F8FAF9] border border-gray-100 text-xs sm:text-sm text-[#111827] whitespace-pre-wrap break-words leading-relaxed">
                   {application.notes}
                 </div>
               ) : (
-                <p className="text-xs text-[#9CA3AF] italic">
+                <p className="text-xs text-[#8E98A2] italic">
                   No notes added for this application yet. Click Edit to add interview notes or recruiter contacts.
                 </p>
               )}
@@ -277,7 +277,7 @@ export default function ApplicationDetailPage() {
             <Card className="h-full w-full min-w-0">
               <CardHeader>
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-[#4F46E5]" />
+                  <Clock className="w-4 h-4 text-[#0E6162]" />
                   <CardTitle>Timeline</CardTitle>
                 </div>
               </CardHeader>

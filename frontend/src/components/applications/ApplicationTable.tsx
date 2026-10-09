@@ -49,14 +49,14 @@ export function ApplicationTable({
                 {/* Company */}
                 <td className="py-3.5 px-4">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#EEF2FF] text-[#4F46E5] font-bold text-xs flex-shrink-0 border border-[#C7D2FE]/50">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#E7F3F3] text-[#0E6162] font-bold text-xs flex-shrink-0 border border-[#CCE7E8]">
                       {initials}
                     </div>
                     <div className="min-w-0">
                       <div className="inline-flex items-center gap-1.5 max-w-full">
                         <Link
                           href={`/applications/${app.id}`}
-                          className="font-semibold text-[#111827] hover:text-[#4F46E5] transition-colors truncate"
+                          className="font-semibold text-[#111827] hover:text-[#0E6162] transition-colors truncate"
                         >
                           {app.company_name}
                         </Link>
@@ -65,7 +65,7 @@ export function ApplicationTable({
                             href={app.job_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-400 hover:text-[#4F46E5] flex-shrink-0"
+                            className="text-gray-400 hover:text-[#0E6162] flex-shrink-0"
                             title="Open external job link"
                           >
                             <ExternalLink className="w-3.5 h-3.5" />
@@ -73,7 +73,7 @@ export function ApplicationTable({
                         )}
                       </div>
                       {app.salary && (
-                        <p className="text-[11px] text-[#6B7280]">
+                        <p className="text-[11px] text-[#5A646E]">
                           {formatSalary(app.salary, app.currency, app.salary_period)}
                         </p>
                       )}
@@ -88,7 +88,7 @@ export function ApplicationTable({
                 </td>
 
                 {/* Location */}
-                <td className="py-3.5 px-4 text-xs text-[#6B7280]">
+                <td className="py-3.5 px-4 text-xs text-[#5A646E]">
                   {app.location ? (
                     <span className="inline-flex items-center gap-1">
                       <MapPin className="w-3.5 h-3.5 text-gray-400" />
@@ -105,14 +105,14 @@ export function ApplicationTable({
                 </td>
 
                 {/* Applied Date */}
-                <td className="py-3.5 px-4 text-xs text-[#6B7280]">
+                <td className="py-3.5 px-4 text-xs text-[#5A646E]">
                   {formatDate(app.application_date)}
                 </td>
 
                 {/* Interview Date */}
-                <td className="py-3.5 px-4 text-xs text-[#6B7280]">
+                <td className="py-3.5 px-4 text-xs text-[#5A646E]">
                   {app.interview_date ? (
-                    <span className="inline-flex items-center gap-1 text-[#4F46E5] font-medium bg-[#EEF2FF] px-2 py-0.5 rounded">
+                    <span className="inline-flex items-center gap-1 text-[#0E6162] font-medium bg-[#E7F3F3] px-2 py-0.5 rounded">
                       <Calendar className="w-3 h-3" />
                       {formatDate(app.interview_date)}
                     </span>
@@ -126,14 +126,14 @@ export function ApplicationTable({
                   <div className="flex items-center justify-end gap-1">
                     <Link
                       href={`/applications/${app.id}`}
-                      className="p-1.5 text-gray-400 hover:text-[#4F46E5] hover:bg-gray-100 rounded-lg transition-colors"
+                      className="p-1.5 text-gray-400 hover:text-[#0E6162] hover:bg-gray-100 rounded-lg transition-colors"
                       title="View Details"
                     >
                       <Eye className="w-4 h-4" />
                     </Link>
                     <Link
                       href={`/applications/${app.id}/edit`}
-                      className="p-1.5 text-gray-400 hover:text-indigo-600 hover:bg-gray-100 rounded-lg transition-colors"
+                      className="p-1.5 text-gray-400 hover:text-[#0E6162] hover:bg-gray-100 rounded-lg transition-colors"
                       title="Edit Application"
                     >
                       <Edit className="w-4 h-4" />

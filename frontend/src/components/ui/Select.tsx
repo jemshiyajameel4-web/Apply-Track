@@ -52,11 +52,11 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             required={required}
             className={cn(
               "w-full appearance-none rounded-lg border bg-white px-3.5 py-2 pr-10 text-sm text-[#111827] transition-colors",
-              "focus:border-[#4F46E5] focus:outline-none focus:ring-2 focus:ring-[#EEF2FF]",
+              "focus:border-[#0E6162] focus:outline-none focus:ring-2 focus:ring-[#E7F3F3]",
               "disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed",
               error
-                ? "border-[#DC2626] focus:border-[#DC2626] focus:ring-[#FEE2E2]"
-                : "border-[#E5E7EB] hover:border-gray-300",
+                ? "border-[#C24B6E] focus:border-[#C24B6E] focus:ring-[#FCF2F5]"
+                : "border-[#E2E8E5] hover:border-[#D8C2CE]",
               className
             )}
             {...props}

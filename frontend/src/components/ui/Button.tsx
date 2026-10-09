@@ -32,16 +32,16 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantStyles = {
       primary:
-        "bg-[#4F46E5] text-white hover:bg-[#4338CA] active:bg-[#3730A3] focus:ring-[#4F46E5] shadow-sm",
+        "bg-[#0E6162] text-white hover:bg-[#094849] active:bg-[#063637] focus:ring-[#0E6162] shadow-sm",
       secondary:
-        "bg-[#EEF2FF] text-[#4F46E5] hover:bg-[#E0E7FF] active:bg-[#C7D2FE] focus:ring-[#4F46E5]",
+        "bg-[#E7F3F3] text-[#0E6162] hover:bg-[#CCE7E8] active:bg-[#99CFCF] focus:ring-[#0E6162]",
       outline:
-        "border border-[#E5E7EB] bg-white text-[#111827] hover:bg-gray-50 hover:border-gray-300 active:bg-gray-100 focus:ring-[#4F46E5] shadow-xs",
+        "border border-[#E2E8E5] bg-white text-[#111827] hover:bg-[#F8FAF9] hover:border-[#D8C2CE] active:bg-[#E7F3F3] focus:ring-[#0E6162] shadow-xs",
       danger:
-        "bg-[#DC2626] text-white hover:bg-[#B91C1C] active:bg-[#991B1B] focus:ring-[#DC2626] shadow-sm",
+        "bg-[#C24B6E] text-white hover:bg-[#A8385A] active:bg-[#8F2646] focus:ring-[#C24B6E] shadow-sm",
       ghost:
-        "bg-transparent text-[#6B7280] hover:bg-gray-100 hover:text-[#111827] focus:ring-gray-400",
-      link: "bg-transparent text-[#4F46E5] hover:underline p-0 h-auto font-normal focus:ring-0",
+        "bg-transparent text-[#5A646E] hover:bg-[#F3E9EE] hover:text-[#844C6A] focus:ring-gray-400",
+      link: "bg-transparent text-[#0E6162] hover:underline p-0 h-auto font-normal focus:ring-0",
     };
 
     const sizeStyles = {

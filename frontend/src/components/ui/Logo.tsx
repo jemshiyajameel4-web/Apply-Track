@@ -34,7 +34,7 @@ export function Logo({
       {/* Abstract geometric symbol: Briefcase + Check mark progress */}
       <div
         className={cn(
-          "relative flex items-center justify-center rounded-lg bg-[#4F46E5] text-white shadow-sm flex-shrink-0",
+          "relative flex items-center justify-center rounded-lg bg-[#0E6162] text-white shadow-sm flex-shrink-0",
           iconDimensions[size]
         )}
       >
@@ -51,13 +51,13 @@ export function Logo({
           <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
           <rect width="20" height="14" x="2" y="6" rx="2" />
           {/* Progress checkmark */}
-          <path d="m9 13 2 2 4-4" stroke="#FFFFFF" strokeWidth="2.5" />
+          <path d="m9 13 2 2 4-4" stroke="#DE7A96" strokeWidth="2.5" />
         </svg>
       </div>
 
       {showText && (
         <span className={cn("font-bold tracking-tight", textDimensions[size], textColor)}>
-          Apply<span className="text-[#4F46E5]">Track</span>
+          Apply<span className="text-[#0E6162]">Track</span>
         </span>
       )}
     </div>

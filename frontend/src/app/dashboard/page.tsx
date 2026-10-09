@@ -101,8 +101,8 @@ export default function DashboardPage() {
                 value={stats?.total_applications ?? 0}
                 subtitle="All logged job applications"
                 icon={<Briefcase className="w-5 h-5" />}
-                iconBgColor="bg-[#EEF2FF]"
-                iconColor="text-[#4F46E5]"
+                iconBgColor="bg-[#E7F3F3]"
+                iconColor="text-[#0E6162]"
               />
 
               <StatCard
@@ -113,8 +113,8 @@ export default function DashboardPage() {
                 }
                 subtitle={`${stats?.upcoming_interviews_count ?? 0} scheduled soon`}
                 icon={<Video className="w-5 h-5" />}
-                iconBgColor="bg-purple-50"
-                iconColor="text-[#9333EA]"
+                iconBgColor="bg-[#F3E9EE]"
+                iconColor="text-[#844C6A]"
               />
 
               <StatCard
@@ -122,8 +122,8 @@ export default function DashboardPage() {
                 value={stats?.offer_count ?? 0}
                 subtitle={`${stats?.offer_rate ?? 0}% offer rate`}
                 icon={<Award className="w-5 h-5" />}
-                iconBgColor="bg-emerald-50"
-                iconColor="text-[#16A34A]"
+                iconBgColor="bg-[#E7EFEA]"
+                iconColor="text-[#132E27]"
               />
 
               <StatCard
@@ -131,8 +131,8 @@ export default function DashboardPage() {
                 value={stats?.rejected_count ?? 0}
                 subtitle="Keep applying and iterating"
                 icon={<XCircle className="w-5 h-5" />}
-                iconBgColor="bg-red-50"
-                iconColor="text-[#DC2626]"
+                iconBgColor="bg-[#FCF2F5]"
+                iconColor="text-[#DE7A96]"
               />
             </>
           )}
@@ -145,10 +145,10 @@ export default function DashboardPage() {
             <Card className="h-full flex flex-col justify-between">
               <CardHeader>
                 <div className="flex items-center gap-2">
-                  <PieChart className="w-4 h-4 text-[#4F46E5]" />
+                  <PieChart className="w-4 h-4 text-[#0E6162]" />
                   <CardTitle>Application Pipeline Distribution</CardTitle>
                 </div>
-                <span className="text-xs text-[#9CA3AF]">Current stage</span>
+                <span className="text-xs text-[#8E98A2]">Current stage</span>
               </CardHeader>
 
               {loading ? (
@@ -177,11 +177,11 @@ export default function DashboardPage() {
             <Card className="h-full flex flex-col">
               <CardHeader>
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-[#9333EA]" />
+                  <Calendar className="w-4 h-4 text-[#844C6A]" />
                   <CardTitle>Upcoming Interviews</CardTitle>
                 </div>
                 {upcomingInterviews.length > 0 && (
-                  <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-purple-50 text-purple-700">
+                  <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#F3E9EE] text-[#844C6A]">
                     {upcomingInterviews.length} Scheduled
                   </span>
                 )}
@@ -206,10 +206,10 @@ export default function DashboardPage() {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-[#4F46E5]" />
+                <Clock className="w-4 h-4 text-[#0E6162]" />
                 <CardTitle>Recent Activity</CardTitle>
               </div>
-              <span className="text-xs text-[#9CA3AF]">Latest updates</span>
+              <span className="text-xs text-[#8E98A2]">Latest updates</span>
             </CardHeader>
 
             {loading ? (

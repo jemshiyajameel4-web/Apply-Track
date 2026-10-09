@@ -30,14 +30,14 @@ export function ApplicationCard({
       {/* Top Header: Company + Status */}
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-2.5 min-w-0">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#EEF2FF] text-[#4F46E5] font-bold text-xs flex-shrink-0">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#E7F3F3] text-[#0E6162] font-bold text-xs flex-shrink-0 border border-[#CCE7E8]">
             {initials}
           </div>
           <div className="min-w-0">
             <h4 className="text-sm font-bold text-[#111827] truncate">
               {app.company_name}
             </h4>
-            <p className="text-xs font-medium text-[#6B7280] truncate">
+            <p className="text-xs font-medium text-[#5A646E] truncate">
               {app.position}
             </p>
           </div>
@@ -47,29 +47,29 @@ export function ApplicationCard({
       </div>
 
       {/* Meta details */}
-      <div className="grid grid-cols-2 gap-2 text-xs text-[#6B7280] pt-1 border-t border-gray-100">
+      <div className="grid grid-cols-2 gap-2 text-xs text-[#5A646E] pt-1 border-t border-gray-100">
         <div>
-          <span className="text-[11px] text-[#9CA3AF] block">Applied Date</span>
+          <span className="text-[11px] text-[#8E98A2] block">Applied Date</span>
           <span className="font-medium text-[#111827]">
             {formatDate(app.application_date)}
           </span>
         </div>
 
         <div>
-          <span className="text-[11px] text-[#9CA3AF] block">Location</span>
+          <span className="text-[11px] text-[#8E98A2] block">Location</span>
           <span className="font-medium text-[#111827] truncate block">
             {app.location || "—"}
           </span>
         </div>
 
         {app.interview_date && (
-          <div className="col-span-2 bg-[#EEF2FF] p-2 rounded-lg text-[#4F46E5] flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <div className="col-span-2 bg-[#E7F3F3] p-2 rounded-lg text-[#0E6162] flex flex-col sm:flex-row sm:items-center justify-between gap-1 border border-[#CCE7E8]">
             <span className="text-xs font-medium flex items-center gap-1.5 truncate">
               <Calendar className="w-3.5 h-3.5 flex-shrink-0" />
               <span>Interview: {formatDate(app.interview_date)}</span>
             </span>
             {app.interview_type && (
-              <span className="text-[11px] font-semibold bg-white px-2 py-0.5 rounded text-indigo-700 self-start sm:self-auto">
+              <span className="text-[11px] font-semibold bg-white px-2 py-0.5 rounded text-[#0E6162] self-start sm:self-auto border border-[#CCE7E8]">
                 {app.interview_type}
               </span>
             )}
@@ -79,7 +79,7 @@ export function ApplicationCard({
 
         {app.salary && (
           <div className="col-span-2 text-xs">
-            <span className="text-[11px] text-[#9CA3AF]">Salary: </span>
+            <span className="text-[11px] text-[#8E98A2]">Salary: </span>
             <span className="font-semibold text-[#111827]">
               {formatSalary(app.salary, app.currency, app.salary_period)}
             </span>
@@ -95,7 +95,7 @@ export function ApplicationCard({
               href={app.job_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-xs text-[#4F46E5] hover:underline"
+              className="inline-flex items-center gap-1 text-xs text-[#0E6162] hover:underline font-medium"
             >
               <ExternalLink className="w-3 h-3" />
               <span>Job Post</span>
@@ -106,14 +106,14 @@ export function ApplicationCard({
         <div className="flex items-center gap-1">
           <Link
             href={`/applications/${app.id}`}
-            className="p-1.5 text-gray-500 hover:text-[#4F46E5] hover:bg-gray-100 rounded-lg"
+            className="p-1.5 text-gray-500 hover:text-[#0E6162] hover:bg-gray-100 rounded-lg"
             title="View"
           >
             <Eye className="w-4 h-4" />
           </Link>
           <Link
             href={`/applications/${app.id}/edit`}
-            className="p-1.5 text-gray-500 hover:text-indigo-600 hover:bg-gray-100 rounded-lg"
+            className="p-1.5 text-gray-500 hover:text-[#0E6162] hover:bg-gray-100 rounded-lg"
             title="Edit"
           >
             <Edit className="w-4 h-4" />

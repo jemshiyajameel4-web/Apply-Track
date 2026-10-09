@@ -78,10 +78,10 @@ export default function SettingsPage() {
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-[#4F46E5]" />
+              <Shield className="w-4 h-4 text-[#0E6162]" />
               <CardTitle>Security & Password</CardTitle>
             </div>
-            <span className="text-xs text-[#6B7280]">Update credentials</span>
+            <span className="text-xs text-[#8E98A2]">Update credentials</span>
           </CardHeader>
 
           <form onSubmit={handlePasswordChange} className="space-y-4">

@@ -45,8 +45,8 @@ export function AppLayout({
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#F7F8FA]">
         <div className="flex flex-col items-center gap-3">
-          <Loader2 className="h-8 w-8 animate-spin text-[#4F46E5]" />
-          <p className="text-sm font-medium text-[#6B7280]">
+          <Loader2 className="h-8 w-8 animate-spin text-[#0E6162]" />
+          <p className="text-sm font-medium text-[#5A646E]">
             Loading ApplyTrack...
           </p>
         </div>

@@ -153,7 +153,7 @@ export default function ApplicationsPage() {
           </div>
         ) : applications.length === 0 ? (
           <EmptyState
-            icon={<Layers className="w-6 h-6 text-[#4F46E5]" />}
+            icon={<Layers className="w-6 h-6 text-[#0E6162]" />}
             title={
               search || status !== "All"
                 ? "No matching applications found"

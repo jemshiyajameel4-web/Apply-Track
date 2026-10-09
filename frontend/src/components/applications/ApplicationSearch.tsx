@@ -42,7 +42,7 @@ export function ApplicationSearch({
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder={placeholder}
-        className="w-full rounded-lg border border-[#E5E7EB] bg-white py-2 pl-9 pr-8 text-sm text-[#111827] placeholder-gray-400 transition-colors focus:border-[#4F46E5] focus:outline-none focus:ring-2 focus:ring-[#EEF2FF]"
+        className="w-full rounded-lg border border-[#E2E8E5] bg-white py-2 pl-9 pr-8 text-sm text-[#111827] placeholder-gray-400 transition-colors focus:border-[#0E6162] focus:outline-none focus:ring-2 focus:ring-[#E7F3F3]"
       />
 
       {searchTerm && (

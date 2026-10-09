@@ -74,7 +74,7 @@ export function Header({
 
         <Link
           href="/profile"
-          className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-[#EEF2FF] text-[#4F46E5] font-bold text-xs border border-[#C7D2FE] hover:ring-2 hover:ring-[#4F46E5]/20 transition-all flex-shrink-0"
+          className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-[#E7F3F3] text-[#0E6162] font-bold text-xs border border-[#CCE7E8] hover:ring-2 hover:ring-[#0E6162]/20 transition-all flex-shrink-0"
           title={user?.full_name || "Profile"}
         >
           {userInitials}

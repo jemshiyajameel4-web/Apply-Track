@@ -9,7 +9,7 @@ export default function NotFound() {
     <div className="min-h-screen flex flex-col items-center justify-center p-6 bg-[#F7F8FA] text-center">
       <Logo size="lg" className="mb-6" />
 
-      <span className="text-6xl font-extrabold text-[#4F46E5] tracking-tight">
+      <span className="text-6xl font-extrabold text-[#0E6162] tracking-tight">
         404
       </span>
       <h1 className="mt-3 text-2xl font-bold text-[#111827]">

@@ -39,7 +39,7 @@ export function ApplicationTimeline({
                 )}
 
                 <div className="relative flex items-start space-x-3">
-                  <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-[#EEF2FF] text-[#4F46E5] ring-8 ring-white">
+                  <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-[#E7F3F3] text-[#0E6162] ring-8 ring-white border border-[#CCE7E8]">
                     <CircleDot className="h-4 w-4" />
                   </div>
 

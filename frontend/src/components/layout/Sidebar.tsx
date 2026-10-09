@@ -81,7 +81,7 @@ export function Sidebar({ onCloseMobile }: SidebarProps) {
         <Link
           href="/applications/new"
           onClick={onCloseMobile}
-          className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded-lg bg-[#4F46E5] text-white text-sm font-medium hover:bg-[#4338CA] transition-colors shadow-xs"
+          className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded-lg bg-[#0E6162] text-white text-sm font-medium hover:bg-[#094849] transition-colors shadow-xs"
         >
           <PlusCircle className="w-4 h-4" />
           <span>Add Application</span>
@@ -91,7 +91,7 @@ export function Sidebar({ onCloseMobile }: SidebarProps) {
       {/* Navigation Links */}
       <div className="flex-1 px-3 py-2 space-y-6 overflow-y-auto">
         <div className="space-y-1">
-          <p className="px-3 text-[11px] font-semibold uppercase tracking-wider text-[#9CA3AF]">
+          <p className="px-3 text-[11px] font-semibold uppercase tracking-wider text-[#8E98A2]">
             Overview
           </p>
           {mainNav.map((item) => {
@@ -108,12 +108,12 @@ export function Sidebar({ onCloseMobile }: SidebarProps) {
                 className={cn(
                   "flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
                   isActive
-                    ? "bg-[#EEF2FF] text-[#4F46E5]"
-                    : "text-[#6B7280] hover:bg-gray-50 hover:text-[#111827]"
+                    ? "bg-[#E7F3F3] text-[#0E6162] font-semibold"
+                    : "text-[#5A646E] hover:bg-[#F3E9EE]/60 hover:text-[#844C6A]"
                 )}
               >
                 <Icon
-                  className={cn("w-4 h-4", isActive ? "text-[#4F46E5]" : "text-[#9CA3AF]")}
+                  className={cn("w-4 h-4", isActive ? "text-[#0E6162]" : "text-[#8E98A2]")}
                 />
                 <span>{item.name}</span>
               </Link>
@@ -122,7 +122,7 @@ export function Sidebar({ onCloseMobile }: SidebarProps) {
         </div>
 
         <div className="space-y-1 pt-2 border-t border-gray-100">
-          <p className="px-3 text-[11px] font-semibold uppercase tracking-wider text-[#9CA3AF]">
+          <p className="px-3 text-[11px] font-semibold uppercase tracking-wider text-[#8E98A2]">
             Account
           </p>
           {secondaryNav.map((item) => {
@@ -137,12 +137,12 @@ export function Sidebar({ onCloseMobile }: SidebarProps) {
                 className={cn(
                   "flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
                   isActive
-                    ? "bg-[#EEF2FF] text-[#4F46E5]"
-                    : "text-[#6B7280] hover:bg-gray-50 hover:text-[#111827]"
+                    ? "bg-[#E7F3F3] text-[#0E6162] font-semibold"
+                    : "text-[#5A646E] hover:bg-[#F3E9EE]/60 hover:text-[#844C6A]"
                 )}
               >
                 <Icon
-                  className={cn("w-4 h-4", isActive ? "text-[#4F46E5]" : "text-[#9CA3AF]")}
+                  className={cn("w-4 h-4", isActive ? "text-[#0E6162]" : "text-[#8E98A2]")}
                 />
                 <span>{item.name}</span>
               </Link>
@@ -152,17 +152,17 @@ export function Sidebar({ onCloseMobile }: SidebarProps) {
       </div>
 
       {/* User Footer Profile */}
-      <div className="p-3 border-t border-gray-100 bg-[#F9FAFB]/50">
+      <div className="p-3 border-t border-gray-100 bg-[#F8FAF9]">
         <div className="flex items-center justify-between p-2 rounded-lg">
           <div className="flex items-center gap-2.5 min-w-0">
-            <div className="w-8 h-8 rounded-full bg-[#4F46E5] text-white flex items-center justify-center font-semibold text-xs flex-shrink-0">
+            <div className="w-8 h-8 rounded-full bg-[#0E6162] text-white flex items-center justify-center font-semibold text-xs flex-shrink-0">
               {userInitials}
             </div>
             <div className="min-w-0">
               <p className="text-xs font-semibold text-[#111827] truncate">
                 {user?.full_name || "Job Seeker"}
               </p>
-              <p className="text-[11px] text-[#6B7280] truncate">
+              <p className="text-[11px] text-[#5A646E] truncate">
                 {user?.email || "user@applytrack.io"}
               </p>
             </div>

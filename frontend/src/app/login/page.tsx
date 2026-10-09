@@ -67,10 +67,10 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-[#F7F8FA]">
       {/* Left Column: Dark Product Presentation (Section 10) */}
-      <div className="hidden lg:flex flex-col justify-between bg-[#111827] p-12 text-white relative overflow-hidden">
+      <div className="hidden lg:flex flex-col justify-between bg-[#132E27] p-12 text-white relative overflow-hidden">
         {/* Subtle decorative shapes */}
-        <div className="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 rounded-full bg-[#4F46E5]/15 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-80 h-80 rounded-full bg-purple-500/10 blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 rounded-full bg-[#0E6162]/20 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-80 h-80 rounded-full bg-[#DE7A96]/15 blur-3xl pointer-events-none" />
 
         <div className="relative z-10">
           <Logo size="lg" textColor="text-white" linkTo="/" />
@@ -80,37 +80,37 @@ export default function LoginPage() {
           <h2 className="text-3xl font-extrabold tracking-tight text-white leading-tight">
             Track every application.
             <br />
-            <span className="text-[#818CF8]">Land your next opportunity.</span>
+            <span className="text-[#DE7A96]">Land your next opportunity.</span>
           </h2>
-          <p className="text-sm text-gray-300">
+          <p className="text-sm text-gray-200">
             A focused, modern tracking system designed to give you total visibility and confidence in your job hunt.
           </p>
 
           {/* Three Feature Points (Section 10) */}
           <div className="space-y-3 pt-2">
             <div className="flex items-center gap-3 text-sm text-gray-200">
-              <CheckCircle2 className="w-5 h-5 text-[#818CF8] flex-shrink-0" />
+              <CheckCircle2 className="w-5 h-5 text-[#DE7A96] flex-shrink-0" />
               <span>Organize applications in one unified pipeline</span>
             </div>
             <div className="flex items-center gap-3 text-sm text-gray-200">
-              <CheckCircle2 className="w-5 h-5 text-[#818CF8] flex-shrink-0" />
+              <CheckCircle2 className="w-5 h-5 text-[#DE7A96] flex-shrink-0" />
               <span>Track interview stages and upcoming schedules</span>
             </div>
             <div className="flex items-center gap-3 text-sm text-gray-200">
-              <CheckCircle2 className="w-5 h-5 text-[#818CF8] flex-shrink-0" />
+              <CheckCircle2 className="w-5 h-5 text-[#DE7A96] flex-shrink-0" />
               <span>Understand your search with realtime conversion data</span>
             </div>
           </div>
         </div>
 
-        <div className="relative z-10 text-xs text-gray-400">
+        <div className="relative z-10 text-xs text-gray-300">
           © {new Date().getFullYear()} ApplyTrack. All rights reserved.
         </div>
       </div>
 
       {/* Right Column: White Background Login Form */}
       <div className="flex items-center justify-center p-6 sm:p-12">
-        <div className="w-full max-w-md space-y-8 bg-white p-8 sm:p-10 rounded-2xl border border-[#E5E7EB] shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
+        <div className="w-full max-w-md space-y-8 bg-white p-8 sm:p-10 rounded-2xl border border-[#E2E8E5] shadow-[0_4px_20px_rgba(19,46,39,0.05)]">
           <div className="text-center sm:text-left">
             <div className="lg:hidden flex justify-center mb-6">
               <Logo size="md" />
@@ -118,7 +118,7 @@ export default function LoginPage() {
             <h1 className="text-2xl font-bold tracking-tight text-[#111827]">
               Welcome back
             </h1>
-            <p className="mt-1.5 text-sm text-[#6B7280]">
+            <p className="mt-1.5 text-sm text-[#5A646E]">
               Please enter your details to sign in to your dashboard.
             </p>
           </div>
@@ -162,18 +162,18 @@ export default function LoginPage() {
             <button
               type="button"
               onClick={fillDemoCredentials}
-              className="inline-flex items-center gap-1.5 text-xs text-[#4F46E5] hover:text-[#4338CA] font-semibold transition-colors bg-[#EEF2FF] px-3 py-1.5 rounded-lg border border-[#C7D2FE]"
+              className="inline-flex items-center gap-1.5 text-xs text-[#0E6162] hover:text-[#094849] font-semibold transition-colors bg-[#E7F3F3] px-3 py-1.5 rounded-lg border border-[#CCE7E8]"
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>Autofill Demo Credentials (demo@applytrack.io)</span>
             </button>
           </div>
 
-          <p className="text-center text-xs text-[#6B7280]">
+          <p className="text-center text-xs text-[#5A646E]">
             Don&apos;t have an account?{" "}
             <Link
               href="/register"
-              className="font-semibold text-[#4F46E5] hover:underline"
+              className="font-semibold text-[#0E6162] hover:underline"
             >
               Create one free
             </Link>
