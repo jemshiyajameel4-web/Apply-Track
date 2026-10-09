@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
-import { Menu, Plus, Search, Bell, Sparkles } from "lucide-react";
+import { Menu, Plus, Search, Bell, Sparkles, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 interface HeaderProps {
@@ -12,6 +12,8 @@ interface HeaderProps {
   subtitle?: string;
   onOpenMobileMenu: () => void;
   showAddButton?: boolean;
+  showBackButton?: boolean;
+  backHref?: string;
 }
 
 export function Header({
@@ -19,6 +21,8 @@ export function Header({
   subtitle,
   onOpenMobileMenu,
   showAddButton = true,
+  showBackButton = false,
+  backHref,
 }: HeaderProps) {
   const { user } = useAuth();
   const router = useRouter();
@@ -44,8 +48,8 @@ export function Header({
 
   return (
     <header className="sticky top-0 z-20 flex h-16 w-full items-center justify-between border-b border-[#E7DEDF] bg-white/95 px-3 sm:px-6 lg:px-8 backdrop-blur-md">
-      {/* Left side: Mobile Hamburger & Page Title */}
-      <div className="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
+      {/* Left side: Back Button, Mobile Hamburger & Page Title */}
+      <div className="flex items-center gap-2 sm:gap-3 min-w-0">
         <button
           onClick={onOpenMobileMenu}
           className="rounded-xl p-2 text-[#19332F] hover:bg-[#FAF7F5] border border-transparent hover:border-[#E7DEDF] lg:hidden flex-shrink-0 transition-colors"
@@ -53,6 +57,17 @@ export function Header({
         >
           <Menu className="h-5 w-5" />
         </button>
+
+        {showBackButton && (
+          <button
+            onClick={() => (backHref ? router.push(backHref) : router.back())}
+            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border border-[#E7DEDF] bg-[#FAF7F5] text-xs font-semibold text-[#19332F] hover:bg-white hover:border-[#006764] hover:text-[#006764] transition-all flex-shrink-0 group shadow-2xs"
+            title="Go back"
+          >
+            <ArrowLeft className="w-3.5 h-3.5 text-[#006764] group-hover:-translate-x-0.5 transition-transform" />
+            <span className="hidden sm:inline">Back</span>
+          </button>
+        )}
 
         {title && (
           <div className="min-w-0">

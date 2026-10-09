@@ -77,6 +77,8 @@ export default function InsightsPage() {
     <AppLayout
       title="Application Insights"
       subtitle="Data-driven visibility into your job search pipeline, conversion rates, and milestones."
+      showBackButton={true}
+      backHref="/dashboard"
     >
       <div className="space-y-6">
         {/* Header Hero */}

@@ -76,7 +76,12 @@ export default function ApplicationDetailPage() {
 
   if (loading) {
     return (
-      <AppLayout title="Application Details" showAddButton={false}>
+      <AppLayout
+        title="Application Details"
+        showAddButton={false}
+        showBackButton={true}
+        backHref="/applications"
+      >
         <div className="space-y-6 max-w-4xl">
           <Skeleton className="h-24 w-full rounded-xl" />
           <Skeleton className="h-48 w-full rounded-xl" />
@@ -89,7 +94,12 @@ export default function ApplicationDetailPage() {
   if (!application) return null;
 
   return (
-    <AppLayout title="Application Details" showAddButton={false}>
+    <AppLayout
+      title="Application Details"
+      showAddButton={false}
+      showBackButton={true}
+      backHref="/applications"
+    >
       <div className="space-y-5 max-w-4xl w-full min-w-0">
         {/* Back Link */}
         <div>

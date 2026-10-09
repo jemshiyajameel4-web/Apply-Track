@@ -76,6 +76,8 @@ export default function InterviewsPage() {
     <AppLayout
       title="Interview Calendar"
       subtitle="Track your scheduled interviews, technical rounds, and preparation milestones."
+      showBackButton={true}
+      backHref="/dashboard"
     >
       <div className="space-y-6">
         {/* Header summary banner */}

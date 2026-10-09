@@ -23,6 +23,8 @@ export default function NewApplicationPage() {
       title="Add Application"
       subtitle="Log a new job application to your tracking pipeline."
       showAddButton={false}
+      showBackButton={true}
+      backHref="/applications"
     >
       <ApplicationForm onSubmit={handleCreate} />
     </AppLayout>

@@ -66,6 +66,8 @@ export default function ProfilePage() {
       title="User Profile"
       subtitle="Manage your personal career account and contact details."
       showAddButton={false}
+      showBackButton={true}
+      backHref="/dashboard"
     >
       <div className="space-y-6 max-w-2xl">
         {/* Profile Identity Card */}

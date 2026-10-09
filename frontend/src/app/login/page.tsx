@@ -58,12 +58,6 @@ export default function LoginPage() {
     }
   };
 
-  const fillDemoCredentials = () => {
-    setEmail("demo@applytrack.io");
-    setPassword("Password123");
-    setErrors({});
-  };
-
   return (
     <div className="min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-[#FAF7F5]">
       {/* Left Column: Dark Product Presentation (Section 10) */}
@@ -156,18 +150,6 @@ export default function LoginPage() {
               Sign In
             </Button>
           </form>
-
-          {/* Demo Account Quick Fill Button */}
-          <div className="pt-2 border-t border-[#E7DEDF]/50 text-center">
-            <button
-              type="button"
-              onClick={fillDemoCredentials}
-              className="inline-flex items-center gap-1.5 text-xs text-[#006764] hover:text-[#143B34] font-semibold transition-colors bg-[#E6F3F2] px-3 py-1.5 rounded-xl border border-[#B2DCDA]"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-[#E47F9C]" />
-              <span>Autofill Demo (demo@applytrack.io)</span>
-            </button>
-          </div>
 
           <p className="text-center text-xs text-[#687873]">
             Don&apos;t have an account?{" "}

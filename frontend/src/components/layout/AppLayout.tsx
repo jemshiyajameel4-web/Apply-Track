@@ -12,6 +12,8 @@ interface AppLayoutProps {
   title?: string;
   subtitle?: string;
   showAddButton?: boolean;
+  showBackButton?: boolean;
+  backHref?: string;
 }
 
 export function AppLayout({
@@ -19,6 +21,8 @@ export function AppLayout({
   title,
   subtitle,
   showAddButton = true,
+  showBackButton = false,
+  backHref,
 }: AppLayoutProps) {
   const { isAuthenticated, isLoading } = useAuth();
   const router = useRouter();
@@ -88,6 +92,8 @@ export function AppLayout({
           subtitle={subtitle}
           onOpenMobileMenu={() => setMobileMenuOpen(true)}
           showAddButton={showAddButton}
+          showBackButton={showBackButton}
+          backHref={backHref}
         />
 
         <main className="flex-1 p-3.5 sm:p-6 lg:p-8 max-w-[1400px] w-full mx-auto min-w-0">

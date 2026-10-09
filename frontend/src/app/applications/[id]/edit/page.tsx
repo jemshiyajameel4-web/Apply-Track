@@ -49,6 +49,8 @@ export default function EditApplicationPage() {
       title="Edit Application"
       subtitle="Update role details, compensation, interview dates, or notes."
       showAddButton={false}
+      showBackButton={true}
+      backHref={`/applications/${applicationId}`}
     >
       {loading ? (
         <div className="space-y-4 max-w-3xl">

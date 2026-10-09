@@ -72,6 +72,8 @@ export default function SettingsPage() {
       title="Settings"
       subtitle="Manage your account security and authentication preferences."
       showAddButton={false}
+      showBackButton={true}
+      backHref="/dashboard"
     >
       <div className="space-y-6 max-w-2xl">
         {/* Security / Password Card (Section 34) */}
